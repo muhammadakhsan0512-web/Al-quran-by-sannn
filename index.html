@@ -15,31 +15,23 @@
  --muted:#718078;
  --border:#e3ebe7;
  --red:#c62828;
- --gold:#f4b400;
 }
 
-*{
- box-sizing:border-box;
- -webkit-tap-highlight-color:transparent;
-}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 
 body{
  margin:0;
  font-family:Arial,sans-serif;
  background:var(--bg);
  color:var(--text);
- padding-bottom:80px;
+ padding-bottom:75px;
 }
 
 .hidden{display:none!important}
 
-button,input,textarea,select{
- font:inherit;
-}
+button,input,textarea{font:inherit}
 
-button{
- cursor:pointer;
-}
+button{cursor:pointer}
 
 .auth{
  min-height:100vh;
@@ -53,7 +45,7 @@ button{
 .auth-card{
  width:100%;
  max-width:420px;
- background:#fff;
+ background:white;
  border-radius:25px;
  padding:25px;
  box-shadow:0 15px 45px rgba(0,0,0,.2);
@@ -67,13 +59,11 @@ button{
 .auth-card h2{
  text-align:center;
  color:var(--green);
- margin:8px 0;
 }
 
 .auth-card p{
  text-align:center;
  color:var(--muted);
- font-size:14px;
 }
 
 .input{
@@ -82,12 +72,12 @@ button{
  border:1px solid var(--border);
  border-radius:13px;
  outline:none;
- margin-top:9px;
+ margin-top:8px;
  background:white;
 }
 
 textarea.input{
- min-height:110px;
+ min-height:100px;
  resize:vertical;
 }
 
@@ -96,7 +86,7 @@ textarea.input{
  border:0;
  padding:14px;
  border-radius:13px;
- margin-top:14px;
+ margin-top:13px;
  background:var(--green);
  color:white;
  font-weight:bold;
@@ -107,16 +97,11 @@ textarea.input{
  color:var(--green);
 }
 
-.btn.red{
- background:var(--red);
-}
-
 .switch{
  text-align:center;
  color:var(--green);
- margin-top:16px;
+ margin-top:15px;
  cursor:pointer;
- font-size:14px;
 }
 
 .error{
@@ -128,7 +113,7 @@ textarea.input{
 
 header{
  background:linear-gradient(135deg,var(--green),var(--green2));
- color:#fff;
+ color:white;
  padding:22px 18px 35px;
  border-radius:0 0 28px 28px;
 }
@@ -147,8 +132,8 @@ header{
 }
 
 .sub{
- margin-top:5px;
  font-size:13px;
+ margin-top:5px;
  opacity:.9;
 }
 
@@ -193,7 +178,6 @@ header{
  outline:0;
  padding:15px 10px;
  width:100%;
- background:transparent;
 }
 
 .surah{
@@ -221,13 +205,9 @@ header{
  font-weight:bold;
 }
 
-.surah-info{
- flex:1;
-}
+.surah-info{flex:1}
 
-.surah-name{
- font-weight:bold;
-}
+.surah-name{font-weight:bold}
 
 .desc{
  color:var(--muted);
@@ -235,9 +215,7 @@ header{
  margin-top:5px;
 }
 
-.arabic{
- font-size:22px;
-}
+.arabic{font-size:22px}
 
 .back{
  border:0;
@@ -255,9 +233,7 @@ header{
  margin:15px 0;
 }
 
-.hero-arab{
- font-size:34px;
-}
+.hero-arab{font-size:34px}
 
 .bismillah{
  background:white;
@@ -345,13 +321,8 @@ label{
  font-weight:bold;
 }
 
-.accept{
- background:var(--green);
-}
-
-.reject{
- background:var(--red);
-}
+.accept{background:var(--green)}
+.reject{background:var(--red)}
 
 .prayer-grid{
  display:grid;
@@ -460,32 +431,29 @@ label{
 @media(max-width:500px){
  .container{padding:14px}
  .ayat-arab{font-size:23px}
- .prayer-grid{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= LOGIN ================= -->
-
+<!-- LOGIN / DAFTAR -->
 <div id="authPage" class="auth">
 
  <div id="loginBox" class="auth-card">
 
   <div class="auth-logo">📖</div>
-
   <h2>Al-Qur'an Digital</h2>
   <p>Login untuk melanjutkan</p>
 
   <input id="loginUsername"
-         class="input"
-         placeholder="Username">
+   class="input"
+   placeholder="Username">
 
   <input id="loginPassword"
-         class="input"
-         type="password"
-         placeholder="Password">
+   class="input"
+   type="password"
+   placeholder="Password">
 
   <button class="btn" onclick="login()">
    🔐 Login
@@ -499,22 +467,20 @@ label{
 
  </div>
 
-
  <div id="registerBox" class="auth-card hidden">
 
   <div class="auth-logo">📝</div>
-
   <h2>Daftar Akun</h2>
   <p>Buat akun baru</p>
 
   <input id="registerUsername"
-         class="input"
-         placeholder="Username">
+   class="input"
+   placeholder="Username">
 
   <input id="registerPassword"
-         class="input"
-         type="password"
-         placeholder="Password minimal 6 karakter">
+   class="input"
+   type="password"
+   placeholder="Password minimal 6 karakter">
 
   <button class="btn" onclick="register()">
    📝 Daftar
@@ -527,12 +493,10 @@ label{
   </div>
 
  </div>
-
 </div>
 
 
-<!-- ================= WEBSITE ================= -->
-
+<!-- WEBSITE -->
 <div id="website" class="hidden">
 
 <header>
@@ -547,7 +511,6 @@ label{
 
 
 <!-- QURAN -->
-
 <section id="quranPage">
 
  <div class="container">
@@ -563,8 +526,8 @@ label{
   <div class="search">
    🔎
    <input id="search"
-          placeholder="Cari surah..."
-          oninput="searchSurah()">
+    placeholder="Cari surah..."
+    oninput="searchSurah()">
   </div>
 
   <h2 class="title">📖 114 Surah</h2>
@@ -574,12 +537,10 @@ label{
   </div>
 
  </div>
-
 </section>
 
 
-<!-- DETAIL SURAH -->
-
+<!-- DETAIL -->
 <section id="detailPage" class="hidden">
 
  <div class="container">
@@ -589,16 +550,16 @@ label{
   </button>
 
   <div id="detailContent">
-   <div class="loading">Memuat surah...</div>
+   <div class="loading">
+    Memuat surah...
+   </div>
   </div>
 
  </div>
-
 </section>
 
 
 <!-- STORAN -->
-
 <section id="setoranPage" class="hidden">
 
  <div class="container">
@@ -606,7 +567,7 @@ label{
   <div class="green-card">
    <h2>📚 Storan Hafalan</h2>
    <p>
-    Isi data hafalan lalu kirim video
+    Isi data hafalan kemudian kirim video
     kepada Owner untuk diperiksa.
    </p>
   </div>
@@ -615,44 +576,46 @@ label{
 
    <label>Nama</label>
    <input id="sNama"
-          class="input"
-          placeholder="Nama lengkap">
+    class="input"
+    placeholder="Nama lengkap">
 
    <label>Kelas</label>
    <input id="sKelas"
-          class="input"
-          placeholder="Contoh: 7C">
+    class="input"
+    placeholder="Contoh: 7C">
 
    <label>Umur</label>
    <input id="sUmur"
-          class="input"
-          type="number"
-          min="1">
+    class="input"
+    type="number"
+    min="1"
+    placeholder="Umur">
 
    <label>Jumlah surah yang ingin disetor</label>
    <input id="sJumlah"
-          class="input"
-          type="number"
-          min="1">
+    class="input"
+    type="number"
+    min="1"
+    placeholder="Contoh: 2">
 
    <label>Nama surah yang disetor</label>
    <textarea id="sSurah"
-             class="input"
-             placeholder="Contoh: Al-Fatihah"></textarea>
+    class="input"
+    placeholder="Contoh: Al-Fatihah, An-Nas"></textarea>
 
-   <label>Sumber / keterangan video</label>
+   <label>Sumber video</label>
    <input id="sSumber"
-          class="input"
-          placeholder="Contoh: Google Drive / YouTube">
+    class="input"
+    placeholder="Contoh: Google Drive">
 
    <label>Link video setoran</label>
    <input id="sVideo"
-          class="input"
-          type="url"
-          placeholder="https://...">
+    class="input"
+    type="url"
+    placeholder="https://...">
 
    <div class="info-box">
-    🎥 Pastikan link video dapat dibuka oleh Owner.
+    🎥 Pastikan link video dapat dibuka Owner.
    </div>
 
    <button class="btn" onclick="kirimSetoran()">
@@ -665,22 +628,18 @@ label{
 
 
   <div class="card">
-
    <h3>📋 Riwayat Storan Saya</h3>
 
    <div id="mySubmissions">
     <div class="loading">Memuat...</div>
    </div>
-
   </div>
 
  </div>
-
 </section>
 
 
 <!-- SALAT -->
-
 <section id="prayerPage" class="hidden">
 
  <div class="container">
@@ -691,12 +650,14 @@ label{
   </div>
 
   <div class="card">
+
    <b id="today"></b>
 
    <button class="btn secondary"
-           onclick="requestNotification()">
+    onclick="requestNotification()">
     🔔 Aktifkan Notifikasi Salat
    </button>
+
   </div>
 
   <div class="prayer-grid">
@@ -729,23 +690,18 @@ label{
   </div>
 
  </div>
-
 </section>
 
 
 <!-- OWNER -->
-
 <section id="ownerPage" class="hidden">
 
  <div class="container">
 
   <div class="green-card">
    <h2>👑 Dashboard Owner</h2>
-   <p>
-    Kelola pengguna dan verifikasi storan hafalan.
-   </p>
+   <p>Kelola pengguna dan storan hafalan.</p>
   </div>
-
 
   <div class="stat-grid">
 
@@ -773,6 +729,7 @@ label{
 
 
   <div class="card">
+
    <h3>📚 Semua Storan</h3>
 
    <div id="allSubmissions">
@@ -780,41 +737,40 @@ label{
      Memuat setoran...
     </div>
    </div>
+
   </div>
 
  </div>
-
 </section>
 
 
-<!-- NAV -->
-
+<!-- NAVIGASI -->
 <div class="nav">
 
  <div class="nav-inner">
 
   <button id="navQuran"
-          class="active"
-          onclick="showPage('quran')">
+   class="active"
+   onclick="showPage('quran')">
    <span>📖</span>
    Al-Qur'an
   </button>
 
   <button id="navSetoran"
-          onclick="showPage('setoran')">
+   onclick="showPage('setoran')">
    <span>📚</span>
    Storan
   </button>
 
   <button id="navPrayer"
-          onclick="showPage('prayer')">
+   onclick="showPage('prayer')">
    <span>🕌</span>
    Salat
   </button>
 
   <button id="navOwner"
-          class="hidden"
-          onclick="showPage('owner')">
+   class="hidden"
+   onclick="showPage('owner')">
    <span>👑</span>
    Owner
   </button>
@@ -825,7 +781,6 @@ label{
   </button>
 
  </div>
-
 </div>
 
 </div>
@@ -839,8 +794,8 @@ label{
 
 import {
  initializeApp
-}
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+} from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 import {
  getAuth,
@@ -848,8 +803,8 @@ import {
  signInWithEmailAndPassword,
  onAuthStateChanged,
  signOut
-}
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+} from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 import {
  getFirestore,
@@ -862,180 +817,88 @@ import {
  doc,
  updateDoc,
  serverTimestamp
-}
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+} from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-const firebaseConfig={
+const firebaseConfig = {
 
- apiKey:"AIzaSyB41KwIQybbIFNvrHVRbfCh71pndwWJrSw",
+ apiKey:
+ "AIzaSyB41KwIQybbIFNvrhVRbfCh71pndwWJrSw",
 
- authDomain:"alquran-by-sannn.firebaseapp.com",
+ authDomain:
+ "alquran-by-sannn.firebaseapp.com",
 
- projectId:"alquran-by-sannn",
+ projectId:
+ "alquran-by-sannn",
 
- storageBucket:"alquran-by-sannn.firebasestorage.app",
+ storageBucket:
+ "alquran-by-sannn.firebasestorage.app",
 
- messagingSenderId:"864542578314",
+ messagingSenderId:
+ "864542578314",
 
- appId:"1:864542578314:web:dd873a68f73759fa05ff73"
+ appId:
+ "1:864542578314:web:dd873a68f73759fa05ff73"
 
 };
 
 
-const app=initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-const auth=getAuth(app);
+const auth = getAuth(app);
 
-const db=getFirestore(app);
+const db = getFirestore(app);
 
 
 /* =====================================================
- OWNER
+ OWNER UID
 ===================================================== */
 
-/*
- GANTI dengan UID akun Owner.
-
- Cara mencari:
- Firebase Console
- → Authentication
- → Users
- → klik akun Owner
- → salin User UID
-*/
-
-const OWNER_UID="ISI_UID_OWNER_DI_SINI";
+const OWNER_UID =
+"DNk0UNNSGtV1Ui5ArIlUOsQHCAf1";
 
 
 /* =====================================================
- USERNAME
+ USERNAME → EMAIL FIREBASE
 ===================================================== */
 
 function usernameEmail(username){
 
  return username
-   .toLowerCase()
-   .replace(/[^a-z0-9]/g,"")
-   +"@alquran-by-sannn.firebaseapp.com";
+ .toLowerCase()
+ .replace(/[^a-z0-9]/g,"")
+ +"@alquran-by-sannn.firebaseapp.com";
 
 }
 
 
 /* =====================================================
- LOGIN / REGISTER
+ LOGIN
 ===================================================== */
 
-window.showRegister=function(){
+window.login = async function(){
 
- document.getElementById("loginBox")
-  .classList.add("hidden");
+ const username =
+ document.getElementById("loginUsername")
+ .value.trim();
 
- document.getElementById("registerBox")
-  .classList.remove("hidden");
+ const password =
+ document.getElementById("loginPassword")
+ .value;
 
-};
+ const error =
+ document.getElementById("loginError");
 
-
-window.showLogin=function(){
-
- document.getElementById("registerBox")
-  .classList.add("hidden");
-
- document.getElementById("loginBox")
-  .classList.remove("hidden");
-
-};
-
-
-window.register=async function(){
-
- const username=
-  document.getElementById("registerUsername")
-  .value.trim();
-
- const password=
-  document.getElementById("registerPassword")
-  .value;
-
- const error=
-  document.getElementById("registerError");
-
- error.textContent="";
-
+ error.textContent = "";
 
  if(!username || !password){
 
-  error.textContent=
-   "Username dan password wajib diisi.";
+  error.textContent =
+  "Username dan password wajib diisi.";
 
   return;
-
  }
-
-
- if(password.length<6){
-
-  error.textContent=
-   "Password minimal 6 karakter.";
-
-  return;
-
- }
-
-
- try{
-
-  const email=usernameEmail(username);
-
-  const credential=
-   await createUserWithEmailAndPassword(
-    auth,
-    email,
-    password
-   );
-
-
-  await addDoc(
-   collection(db,"users"),
-   {
-    uid:credential.user.uid,
-    username:username,
-    email:email,
-    createdAt:serverTimestamp()
-   }
-  );
-
-
-  alert("Akun berhasil dibuat!");
-
- }catch(e){
-
-  error.textContent=
-   e.code==="auth/email-already-in-use"
-   ? "Username sudah digunakan."
-   : e.message;
-
- }
-
-};
-
-
-window.login=async function(){
-
- const username=
-  document.getElementById("loginUsername")
-  .value.trim();
-
- const password=
-  document.getElementById("loginPassword")
-  .value;
-
- const error=
-  document.getElementById("loginError");
-
- error.textContent="";
-
 
  try{
 
@@ -1047,15 +910,118 @@ window.login=async function(){
 
  }catch(e){
 
-  error.textContent=
-   "Username atau password salah.";
+  error.textContent =
+  "Username atau password salah.";
 
  }
 
 };
 
 
-window.logout=async function(){
+/* =====================================================
+ DAFTAR
+===================================================== */
+
+window.register = async function(){
+
+ const username =
+ document.getElementById("registerUsername")
+ .value.trim();
+
+ const password =
+ document.getElementById("registerPassword")
+ .value;
+
+ const error =
+ document.getElementById("registerError");
+
+ error.textContent = "";
+
+ if(!username || !password){
+
+  error.textContent =
+  "Username dan password wajib diisi.";
+
+  return;
+ }
+
+ if(password.length < 6){
+
+  error.textContent =
+  "Password minimal 6 karakter.";
+
+  return;
+ }
+
+ try{
+
+  const email =
+  usernameEmail(username);
+
+  const credential =
+  await createUserWithEmailAndPassword(
+   auth,
+   email,
+   password
+  );
+
+  await addDoc(
+   collection(db,"users"),
+   {
+    uid:credential.user.uid,
+    username:username,
+    email:email,
+    createdAt:serverTimestamp()
+   }
+  );
+
+  alert("Akun berhasil dibuat!");
+
+  showLogin();
+
+ }catch(e){
+
+  error.textContent =
+  e.code === "auth/email-already-in-use"
+  ? "Username sudah digunakan."
+  : e.message;
+
+ }
+
+};
+
+
+/* =====================================================
+ FORM LOGIN / DAFTAR
+===================================================== */
+
+window.showRegister = function(){
+
+ document.getElementById("loginBox")
+ .classList.add("hidden");
+
+ document.getElementById("registerBox")
+ .classList.remove("hidden");
+
+};
+
+
+window.showLogin = function(){
+
+ document.getElementById("registerBox")
+ .classList.add("hidden");
+
+ document.getElementById("loginBox")
+ .classList.remove("hidden");
+
+};
+
+
+/* =====================================================
+ LOGOUT
+===================================================== */
+
+window.logout = async function(){
 
  await signOut(auth);
 
@@ -1068,38 +1034,41 @@ window.logout=async function(){
 
 onAuthStateChanged(auth,user=>{
 
- if(user){
+ if(!user){
 
   document.getElementById("authPage")
-   .classList.add("hidden");
+  .classList.remove("hidden");
 
   document.getElementById("website")
-   .classList.remove("hidden");
+  .classList.add("hidden");
+
+  return;
+ }
+
+ document.getElementById("authPage")
+ .classList.add("hidden");
+
+ document.getElementById("website")
+ .classList.remove("hidden");
 
 
-  const owner=
-   user.uid===OWNER_UID;
+ const owner =
+ user.uid === OWNER_UID;
+
+ document.getElementById("navOwner")
+ .classList.toggle(
+  "hidden",
+  !owner
+ );
 
 
-  document.getElementById("navOwner")
-   .classList.toggle("hidden",!owner);
+ showPage("quran");
 
+ loadMySubmissions();
 
-  showPage("quran");
+ if(owner){
 
-  loadMySubmissions();
-
-  if(owner){
-   loadOwnerData();
-  }
-
- }else{
-
-  document.getElementById("authPage")
-   .classList.remove("hidden");
-
-  document.getElementById("website")
-   .classList.add("hidden");
+  loadOwnerData();
 
  }
 
@@ -1110,9 +1079,9 @@ onAuthStateChanged(auth,user=>{
  NAVIGASI
 ===================================================== */
 
-window.showPage=function(page){
+window.showPage = function(page){
 
- const pages=[
+ const pages = [
   "quranPage",
   "detailPage",
   "setoranPage",
@@ -1121,38 +1090,39 @@ window.showPage=function(page){
  ];
 
  pages.forEach(id=>{
+
   document.getElementById(id)
-   .classList.add("hidden");
+  .classList.add("hidden");
+
  });
 
 
- if(page==="quran")
+ if(page === "quran")
   document.getElementById("quranPage")
-   .classList.remove("hidden");
+  .classList.remove("hidden");
 
 
- if(page==="setoran")
+ if(page === "setoran")
   document.getElementById("setoranPage")
-   .classList.remove("hidden");
+  .classList.remove("hidden");
 
 
- if(page==="prayer")
+ if(page === "prayer")
   document.getElementById("prayerPage")
-   .classList.remove("hidden");
+  .classList.remove("hidden");
 
 
- if(page==="owner"){
+ if(page === "owner"){
 
-  if(auth.currentUser?.uid!==OWNER_UID){
+  if(auth.currentUser?.uid !== OWNER_UID){
 
    alert("Menu khusus Owner.");
 
    return;
-
   }
 
   document.getElementById("ownerPage")
-   .classList.remove("hidden");
+  .classList.remove("hidden");
 
   loadOwnerData();
 
@@ -1160,20 +1130,26 @@ window.showPage=function(page){
 
 
  document.querySelectorAll(".nav button")
-  .forEach(x=>x.classList.remove("active"));
+ .forEach(btn=>{
+  btn.classList.remove("active");
+ });
 
 
- const nav={
+ const nav = {
+
   quran:"navQuran",
   setoran:"navSetoran",
   prayer:"navPrayer",
   owner:"navOwner"
+
  };
 
 
  if(nav[page]){
+
   document.getElementById(nav[page])
-   .classList.add("active");
+  .classList.add("active");
+
  }
 
 };
@@ -1183,31 +1159,32 @@ window.showPage=function(page){
  AL-QURAN
 ===================================================== */
 
-let semuaSurah=[];
+let semuaSurah = [];
 
 
 async function loadSurah(){
 
  try{
 
-  const r=
-   await fetch(
-    "https://api.alquran.cloud/v1/surah"
-   );
+  const response =
+  await fetch(
+   "https://api.alquran.cloud/v1/surah"
+  );
 
-  const data=await r.json();
+  const data =
+  await response.json();
 
-  semuaSurah=data.data;
+  semuaSurah = data.data;
 
   renderSurah(semuaSurah);
 
  }catch(e){
 
   document.getElementById("surahList")
-   .innerHTML=
-   `<div class="error">
-    Gagal memuat daftar surah.
-   </div>`;
+  .innerHTML =
+  `<div class="error">
+   Gagal memuat daftar surah.
+  </div>`;
 
  }
 
@@ -1217,49 +1194,56 @@ async function loadSurah(){
 function renderSurah(data){
 
  document.getElementById("surahList")
-  .innerHTML=data.map(s=>`
+ .innerHTML = data.map(s=>`
 
-   <div class="surah"
-        onclick="openSurah(${s.number})">
+  <div class="surah"
+   onclick="openSurah(${s.number})">
 
-    <div class="num">
-     ${s.number}
+   <div class="num">
+    ${s.number}
+   </div>
+
+   <div class="surah-info">
+
+    <div class="surah-name">
+     ${escapeHTML(s.englishName)}
     </div>
 
-    <div class="surah-info">
-
-     <div class="surah-name">
-      ${s.englishName}
-     </div>
-
-     <div class="desc">
-      ${s.englishNameTranslation}
-      • ${s.numberOfAyahs} Ayat
-     </div>
-
-    </div>
-
-    <div class="arabic">
-     ${s.name}
+    <div class="desc">
+     ${escapeHTML(s.englishNameTranslation)}
+     • ${s.numberOfAyahs} Ayat
     </div>
 
    </div>
 
-  `).join("");
+   <div class="arabic">
+    ${s.name}
+   </div>
+
+  </div>
+
+ `).join("");
 
 }
 
 
-window.searchSurah=function(){
+window.searchSurah = function(){
 
- const q=
-  document.getElementById("search")
-  .value.toLowerCase();
+ const q =
+ document.getElementById("search")
+ .value
+ .toLowerCase();
 
  renderSurah(
   semuaSurah.filter(s=>
-   s.englishName.toLowerCase().includes(q) ||
-   s.englishNameTranslation.toLowerCase().includes(q) ||
+   s.englishName
+   .toLowerCase()
+   .includes(q)
+   ||
+   s.englishNameTranslation
+   .toLowerCase()
+   .includes(q)
+   ||
    String(s.number).includes(q)
   )
  );
@@ -1267,27 +1251,32 @@ window.searchSurah=function(){
 };
 
 
-window.openSurah=async function(number){
+/* =====================================================
+ DETAIL SURAH
+===================================================== */
+
+window.openSurah = async function(number){
 
  document.getElementById("quranPage")
-  .classList.add("hidden");
+ .classList.add("hidden");
 
  document.getElementById("detailPage")
-  .classList.remove("hidden");
+ .classList.remove("hidden");
 
 
- const content=
-  document.getElementById("detailContent");
+ const content =
+ document.getElementById("detailContent");
 
- content.innerHTML=
-  `<div class="loading">
-   📖 Memuat surah...
-  </div>`;
+ content.innerHTML =
+ `<div class="loading">
+  📖 Memuat surah...
+ </div>`;
 
 
  try{
 
-  const [a,b]=await Promise.all([
+  const [arabicResponse,indoResponse] =
+  await Promise.all([
 
    fetch(
     `https://api.alquran.cloud/v1/surah/${number}/quran-uthmani`
@@ -1300,24 +1289,40 @@ window.openSurah=async function(number){
   ]);
 
 
-  const arab=(await a.json()).data;
+  const arabic =
+  (await arabicResponse.json()).data;
 
-  const indo=(await b.json()).data;
+  const indo =
+  (await indoResponse.json()).data;
 
 
-  let html=`
+  window.currentArabicText =
+  arabic.ayahs
+  .map(x=>x.text)
+  .join(" ");
+
+
+  let html = `
 
    <div class="hero">
 
     <div class="hero-arab">
-     ${arab.name}
+     ${arabic.name}
     </div>
 
-    <h2>${arab.englishName}</h2>
+    <h2>
+     ${escapeHTML(arabic.englishName)}
+    </h2>
 
-    <p>${arab.englishNameTranslation}</p>
+    <p>
+     ${escapeHTML(
+      arabic.englishNameTranslation
+     )}
+    </p>
 
-    <p>${arab.numberOfAyahs} Ayat</p>
+    <p>
+     ${arabic.numberOfAyahs} Ayat
+    </p>
 
     <button
      class="btn secondary"
@@ -1336,30 +1341,24 @@ window.openSurah=async function(number){
   `;
 
 
-  if(number!==9){
+  if(number !== 9){
 
-   html+=`
-
+   html += `
     <div class="bismillah">
      بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
     </div>
-
    `;
 
   }
 
 
-  window.currentArabicText=
-   arab.ayahs.map(x=>x.text).join(" ");
+  arabic.ayahs.forEach((ayat,index)=>{
 
-
-  arab.ayahs.forEach((ayat,i)=>{
-
-   html+=`
+   html += `
 
     <div class="ayat">
 
-     <b>Ayat ${i+1}</b>
+     <b>Ayat ${index+1}</b>
 
      <div class="ayat-arab">
       ${ayat.text}
@@ -1367,7 +1366,9 @@ window.openSurah=async function(number){
 
      <div class="arti">
       <b>Arti:</b><br>
-      ${indo.ayahs[i]?.text || "-"}
+      ${escapeHTML(
+       indo.ayahs[index]?.text || "-"
+      )}
      </div>
 
     </div>
@@ -1377,16 +1378,16 @@ window.openSurah=async function(number){
   });
 
 
-  content.innerHTML=html;
+  content.innerHTML = html;
 
   window.scrollTo(0,0);
 
  }catch(e){
 
-  content.innerHTML=
-   `<div class="error">
-    Gagal memuat surah.
-   </div>`;
+  content.innerHTML =
+  `<div class="error">
+   Gagal memuat surah.
+  </div>`;
 
  }
 
@@ -1394,53 +1395,46 @@ window.openSurah=async function(number){
 
 
 /* =====================================================
- FITUR BACA SURAH
+ AI / SUARA MEMBACA SURAH
 ===================================================== */
 
-window.bacaSurah=function(){
+window.bacaSurah = function(){
 
  if(!window.currentArabicText){
 
   alert("Teks belum siap.");
 
   return;
-
  }
-
 
  if(!("speechSynthesis" in window)){
 
   alert(
-   "Browser HP ini tidak mendukung pembacaan suara."
+   "HP/browser ini tidak mendukung pembacaan suara."
   );
 
   return;
-
  }
-
 
  speechSynthesis.cancel();
 
+ const suara =
+ new SpeechSynthesisUtterance(
+  window.currentArabicText
+ );
 
- const text=
-  new SpeechSynthesisUtterance(
-   window.currentArabicText
-  );
+ suara.lang = "ar-SA";
 
+ suara.rate = .75;
 
- text.lang="ar-SA";
+ suara.pitch = 1;
 
- text.rate=.75;
-
- text.pitch=1;
-
-
- speechSynthesis.speak(text);
+ speechSynthesis.speak(suara);
 
 };
 
 
-window.stopBaca=function(){
+window.stopBaca = function(){
 
  if("speechSynthesis" in window){
 
@@ -1452,64 +1446,62 @@ window.stopBaca=function(){
 
 
 /* =====================================================
- STORAN
+ KIRIM STORAN
 ===================================================== */
 
-window.kirimSetoran=async function(){
+window.kirimSetoran = async function(){
 
- const user=auth.currentUser;
+ const user = auth.currentUser;
 
  if(!user){
 
   alert("Silakan login.");
 
   return;
-
  }
 
 
- const nama=
-  document.getElementById("sNama")
-  .value.trim();
+ const nama =
+ document.getElementById("sNama")
+ .value.trim();
 
- const kelas=
-  document.getElementById("sKelas")
-  .value.trim();
+ const kelas =
+ document.getElementById("sKelas")
+ .value.trim();
 
- const umur=
-  document.getElementById("sUmur")
-  .value.trim();
+ const umur =
+ document.getElementById("sUmur")
+ .value.trim();
 
- const jumlah=
-  document.getElementById("sJumlah")
-  .value.trim();
+ const jumlah =
+ document.getElementById("sJumlah")
+ .value.trim();
 
- const surah=
-  document.getElementById("sSurah")
-  .value.trim();
+ const surah =
+ document.getElementById("sSurah")
+ .value.trim();
 
- const sumber=
-  document.getElementById("sSumber")
-  .value.trim();
+ const sumber =
+ document.getElementById("sSumber")
+ .value.trim();
 
- const video=
-  document.getElementById("sVideo")
-  .value.trim();
+ const video =
+ document.getElementById("sVideo")
+ .value.trim();
 
 
  if(
-  !nama||
-  !kelas||
-  !umur||
-  !jumlah||
-  !surah||
+  !nama ||
+  !kelas ||
+  !umur ||
+  !jumlah ||
+  !surah ||
   !video
  ){
 
   alert("Lengkapi data terlebih dahulu.");
 
   return;
-
  }
 
 
@@ -1544,14 +1536,20 @@ window.kirimSetoran=async function(){
 
 
   document.getElementById("setoranMsg")
-   .innerHTML=`
+  .innerHTML = `
 
-    <div class="status pending">
-     📤 Storan berhasil dikirim.<br>
-     ⏳ Tunggu Owner menerima atau menolak setoran.
-    </div>
+   <div class="status pending">
 
-   `;
+    📤 Storan berhasil dikirim.
+
+    <br>
+
+    ⏳ Menunggu Owner menerima
+    atau menolak storan.
+
+   </div>
+
+  `;
 
 
   [
@@ -1563,14 +1561,16 @@ window.kirimSetoran=async function(){
    "sSumber",
    "sVideo"
   ].forEach(id=>{
+
    document.getElementById(id).value="";
+
   });
 
 
  }catch(e){
 
   alert(
-   "Gagal mengirim: "+e.message
+   "Gagal mengirim: " + e.message
   );
 
  }
@@ -1579,111 +1579,144 @@ window.kirimSetoran=async function(){
 
 
 /* =====================================================
- STORAN SAYA
+ STORAN SAYA REALTIME
 ===================================================== */
 
-let myListener=null;
+let myListener = null;
 
 
 function loadMySubmissions(){
 
- const user=auth.currentUser;
+ const user = auth.currentUser;
 
  if(!user)return;
 
 
- const q=query(
+ const q = query(
   collection(db,"submissions"),
   where("uid","==",user.uid)
  );
 
 
- if(myListener)
+ if(myListener){
+
   myListener();
 
+ }
 
- myListener=onSnapshot(
+
+ myListener =
+ onSnapshot(
   q,
   snapshot=>{
 
-   const box=
-    document.getElementById("mySubmissions");
+   const box =
+   document.getElementById(
+    "mySubmissions"
+   );
 
 
    if(snapshot.empty){
 
-    box.innerHTML=
-     `<div class="loading">
-      Belum ada storan.
-     </div>`;
+    box.innerHTML =
+    `<div class="loading">
+     Belum ada storan.
+    </div>`;
 
     return;
-
    }
 
 
-   box.innerHTML="";
+   box.innerHTML = "";
 
 
    snapshot.forEach(d=>{
 
-    const x=d.data();
+    const x = d.data();
 
-    let cls="pending";
+    let cls = "pending";
 
-    if(x.status==="accepted")
-     cls="accepted";
+    if(x.status === "accepted")
+     cls = "accepted";
 
-    if(x.status==="rejected")
-     cls="rejected";
+    if(x.status === "rejected")
+     cls = "rejected";
 
 
-    box.innerHTML+=`
+    box.innerHTML += `
 
      <div class="submission">
 
-      <b>📚 ${escapeHTML(x.nama)}</b>
+      <b>
+       📚 ${escapeHTML(x.nama)}
+      </b>
 
       <p>
-       Kelas: ${escapeHTML(x.kelas)}<br>
-       Umur: ${x.umur}<br>
-       Jumlah: ${x.jumlahSurah} surah<br>
-       Surah: ${escapeHTML(x.surah)}
+
+       Kelas:
+       ${escapeHTML(x.kelas)}
+       <br>
+
+       Umur:
+       ${x.umur}
+       <br>
+
+       Jumlah:
+       ${x.jumlahSurah} surah
+       <br>
+
+       Surah:
+       ${escapeHTML(x.surah)}
+
       </p>
 
-      ${
-       x.sumber
-       ? `<p>Sumber: ${escapeHTML(x.sumber)}</p>`
-       : ""
-      }
+      <a
+       class="link"
+       href="${safeURL(x.video)}"
+       target="_blank">
 
-      <a class="link"
-         href="${safeURL(x.video)}"
-         target="_blank">
        🎥 Buka Video
+
       </a>
 
       <div class="status ${cls}">
+
        Status:
-       <b>${statusText(x.status)}</b>
+       <b>
+        ${statusText(x.status)}
+       </b>
+
       </div>
 
       ${
-       x.status==="accepted"
-       ? `
-        <div class="status accepted">
-         🎉 Storan diterima Owner.
-        </div>
+       x.status === "accepted"
+       ?
+       `
+       <div class="status accepted">
+
+        🎉 Storan diterima Owner.
+
+        <br><br>
+
+        <b>
+         Silakan hubungi Owner
+         untuk informasi pembayaran.
+        </b>
+
+       </div>
        `
        : ""
       }
 
       ${
-       x.status==="rejected"
-       ? `
-        <div class="status rejected">
-         ❌ Storan ditolak Owner.
-        </div>
+       x.status === "rejected"
+       ?
+       `
+       <div class="status rejected">
+
+        ❌ Storan ditolak Owner.
+
+       </div>
        `
        : ""
       }
@@ -1697,12 +1730,16 @@ function loadMySubmissions(){
   },
   error=>{
 
-   document.getElementById("mySubmissions")
-    .innerHTML=
-    `<div class="error">
-     Tidak bisa membaca data Firestore.
-     Periksa Firestore Rules.
-    </div>`;
+   document.getElementById(
+    "mySubmissions"
+   ).innerHTML =
+
+   `<div class="error">
+
+    Tidak dapat membaca Firestore.
+    Periksa Firestore Rules.
+
+   </div>`;
 
   }
  );
@@ -1710,161 +1747,175 @@ function loadMySubmissions(){
 }
 
 
-function statusText(status){
-
- if(status==="accepted")
-  return "DITERIMA";
-
- if(status==="rejected")
-  return "DITOLAK";
-
- return "MENUNGGU VERIFIKASI";
-
-}
-
-
 /* =====================================================
- OWNER
+ OWNER DASHBOARD
 ===================================================== */
 
 async function loadOwnerData(){
 
- if(auth.currentUser?.uid!==OWNER_UID)
+ if(auth.currentUser?.uid !== OWNER_UID)
   return;
 
 
  try{
 
-  const users=
-   await getDocs(
-    collection(db,"users")
-   );
+  const users =
+  await getDocs(
+   collection(db,"users")
+  );
+
+
+  const submissions =
+  await getDocs(
+   collection(db,"submissions")
+  );
 
 
   document.getElementById("userCount")
-   .textContent=users.size;
-
-
-  const submissions=
-   await getDocs(
-    collection(db,"submissions")
-   );
+  .textContent = users.size;
 
 
   document.getElementById("submissionCount")
-   .textContent=submissions.size;
+  .textContent = submissions.size;
 
 
-  let pending=0;
-  let accepted=0;
+  let pending = 0;
+
+  let accepted = 0;
 
 
   submissions.forEach(d=>{
 
-   const x=d.data();
+   const x = d.data();
 
-   if(x.status==="pending")
+   if(x.status === "pending")
     pending++;
 
-   if(x.status==="accepted")
+   if(x.status === "accepted")
     accepted++;
 
   });
 
 
   document.getElementById("pendingCount")
-   .textContent=pending;
-
+  .textContent = pending;
 
   document.getElementById("acceptedCount")
-   .textContent=accepted;
+  .textContent = accepted;
 
 
-  const box=
-   document.getElementById("allSubmissions");
+  const box =
+  document.getElementById(
+   "allSubmissions"
+  );
 
 
   if(submissions.empty){
 
-   box.innerHTML=
-    `<div class="loading">
-     Belum ada storan.
-    </div>`;
+   box.innerHTML =
+   `<div class="loading">
+    Belum ada storan.
+   </div>`;
 
    return;
-
   }
 
 
-  box.innerHTML="";
+  box.innerHTML = "";
 
 
   submissions.forEach(d=>{
 
-   const x=d.data();
+   const x = d.data();
 
-   let cls="pending";
+   let cls = "pending";
 
-   if(x.status==="accepted")
-    cls="accepted";
+   if(x.status === "accepted")
+    cls = "accepted";
 
-   if(x.status==="rejected")
-    cls="rejected";
+   if(x.status === "rejected")
+    cls = "rejected";
 
 
-   box.innerHTML+=`
+   box.innerHTML += `
 
     <div class="submission">
 
-     <b>👤 ${escapeHTML(x.nama)}</b>
+     <b>
+      👤 ${escapeHTML(x.nama)}
+     </b>
 
      <p>
-      UID: ${escapeHTML(x.uid)}<br>
-      Kelas: ${escapeHTML(x.kelas)}<br>
-      Umur: ${x.umur}<br>
-      Jumlah: ${x.jumlahSurah} surah<br>
-      Surah: ${escapeHTML(x.surah)}
+
+      Kelas:
+      ${escapeHTML(x.kelas)}
+      <br>
+
+      Umur:
+      ${x.umur}
+      <br>
+
+      Jumlah:
+      ${x.jumlahSurah} surah
+      <br>
+
+      Surah:
+      ${escapeHTML(x.surah)}
+
      </p>
 
      ${
       x.sumber
-      ? `<p>
-          Sumber:
-          ${escapeHTML(x.sumber)}
-         </p>`
+      ?
+      `<p>
+       Sumber:
+       ${escapeHTML(x.sumber)}
+      </p>`
       : ""
      }
 
-     <a class="link"
-        href="${safeURL(x.video)}"
-        target="_blank">
+     <a
+      class="link"
+      href="${safeURL(x.video)}"
+      target="_blank">
+
       🎥 Lihat Video
+
      </a>
 
      <div class="status ${cls}">
+
       Status:
-      <b>${statusText(x.status)}</b>
+      <b>
+       ${statusText(x.status)}
+      </b>
+
      </div>
 
      ${
-      x.status==="pending"
-      ? `
+      x.status === "pending"
+      ?
+      `
 
-       <div class="owner-btns">
+      <div class="owner-btns">
 
-        <button
-         class="accept"
-         onclick="acceptSubmission('${d.id}')">
-         ✅ Terima
-        </button>
+       <button
+        class="accept"
+        onclick="acceptSubmission('${d.id}')">
 
-        <button
-         class="reject"
-         onclick="rejectSubmission('${d.id}')">
-         ❌ Tolak
-        </button>
+        ✅ Terima
 
-       </div>
+       </button>
+
+       <button
+        class="reject"
+        onclick="rejectSubmission('${d.id}')">
+
+        ❌ Tolak
+
+       </button>
+
+      </div>
 
       `
       : ""
@@ -1879,12 +1930,19 @@ async function loadOwnerData(){
 
  }catch(e){
 
-  document.getElementById("allSubmissions")
-   .innerHTML=
-   `<div class="error">
-    Gagal mengambil data Owner:<br>
-    ${escapeHTML(e.message)}
-   </div>`;
+  document.getElementById(
+   "allSubmissions"
+  ).innerHTML =
+
+  `<div class="error">
+
+   Gagal mengambil data Owner:
+
+   <br>
+
+   ${escapeHTML(e.message)}
+
+  </div>`;
 
  }
 
@@ -1892,17 +1950,17 @@ async function loadOwnerData(){
 
 
 /* =====================================================
- TERIMA / TOLAK
+ TERIMA STORAN
 ===================================================== */
 
-window.acceptSubmission=async function(id){
+window.acceptSubmission =
+async function(id){
 
- if(auth.currentUser?.uid!==OWNER_UID){
+ if(auth.currentUser?.uid !== OWNER_UID){
 
   alert("Akses Owner saja.");
 
   return;
-
  }
 
 
@@ -1923,21 +1981,27 @@ window.acceptSubmission=async function(id){
 
  }catch(e){
 
-  alert("Gagal: "+e.message);
+  alert(
+   "Gagal: " + e.message
+  );
 
  }
 
 };
 
 
-window.rejectSubmission=async function(id){
+/* =====================================================
+ TOLAK STORAN
+===================================================== */
 
- if(auth.currentUser?.uid!==OWNER_UID){
+window.rejectSubmission =
+async function(id){
+
+ if(auth.currentUser?.uid !== OWNER_UID){
 
   alert("Akses Owner saja.");
 
   return;
-
  }
 
 
@@ -1958,11 +2022,30 @@ window.rejectSubmission=async function(id){
 
  }catch(e){
 
-  alert("Gagal: "+e.message);
+  alert(
+   "Gagal: " + e.message
+  );
 
  }
 
 };
+
+
+/* =====================================================
+ STATUS
+===================================================== */
+
+function statusText(status){
+
+ if(status === "accepted")
+  return "DITERIMA";
+
+ if(status === "rejected")
+  return "DITOLAK";
+
+ return "MENUNGGU VERIFIKASI";
+
+}
 
 
 /* =====================================================
@@ -1973,25 +2056,32 @@ async function loadPrayer(){
 
  try{
 
-  const now=new Date();
+  const now = new Date();
 
-  const tanggal=
-   String(now.getDate()).padStart(2,"0")
-   +"-"+
-   String(now.getMonth()+1).padStart(2,"0")
-   +"-"+
+  const tanggal =
+   String(now.getDate())
+   .padStart(2,"0")
+   + "-"
+   +
+   String(now.getMonth()+1)
+   .padStart(2,"0")
+   + "-"
+   +
    now.getFullYear();
 
 
-  const r=
-   await fetch(
-    `https://api.aladhan.com/v1/timingsByCity/${tanggal}?city=Batam&country=Indonesia&method=20`
-   );
+  const response =
+  await fetch(
+   `https://api.aladhan.com/v1/timingsByCity/${tanggal}?city=Batam&country=Indonesia&method=20`
+  );
 
 
-  const data=await r.json();
+  const data =
+  await response.json();
 
-  const t=data.data.timings;
+
+  const times =
+  data.data.timings;
 
 
   [
@@ -2002,23 +2092,28 @@ async function loadPrayer(){
    "Isha"
   ].forEach(id=>{
 
-   if(document.getElementById(id)){
+   const element =
+   document.getElementById(id);
 
-    document.getElementById(id)
-     .textContent=
-     t[id].replace(/\s*\(.+\)/,"");
+   if(element){
+
+    element.textContent =
+    times[id]
+    .replace(/\s*\(.+\)/,"");
 
    }
 
   });
 
 
-  window.prayerTimes=t;
-
+  window.prayerTimes = times;
 
  }catch(e){
 
-  console.log(e);
+  console.log(
+   "Gagal waktu salat:",
+   e
+  );
 
  }
 
@@ -2026,53 +2121,54 @@ async function loadPrayer(){
 
 
 document.getElementById("today")
- .textContent=
- new Date().toLocaleDateString(
-  "id-ID",
-  {
-   weekday:"long",
-   day:"numeric",
-   month:"long",
-   year:"numeric"
-  }
+.textContent =
+new Date().toLocaleDateString(
+ "id-ID",
+ {
+  weekday:"long",
+  day:"numeric",
+  month:"long",
+  year:"numeric"
+ }
 );
 
 
 /* =====================================================
- NOTIFIKASI
+ NOTIFIKASI SALAT
 ===================================================== */
 
-window.requestNotification=function(){
+window.requestNotification =
+function(){
 
  if(!("Notification" in window)){
 
   alert(
-   "Browser ini tidak mendukung notifikasi."
+   "Browser HP ini tidak mendukung notifikasi."
   );
 
   return;
-
  }
 
 
- Notification.requestPermission()
-  .then(permission=>{
+ Notification
+ .requestPermission()
+ .then(permission=>{
 
-   if(permission==="granted"){
+  if(permission === "granted"){
 
-    alert(
-     "🔔 Notifikasi diizinkan."
-    );
+   alert(
+    "🔔 Notifikasi salat diaktifkan."
+   );
 
-   }else{
+  }else{
 
-    alert(
-     "Notifikasi belum diizinkan."
-    );
+   alert(
+    "Notifikasi belum diizinkan."
+   );
 
-   }
+  }
 
-  });
+ });
 
 };
 
@@ -2082,55 +2178,70 @@ function checkPrayerNotification(){
  if(
   !window.prayerTimes ||
   !("Notification" in window) ||
-  Notification.permission!=="granted"
+  Notification.permission !== "granted"
  )return;
 
 
- const now=new Date();
+ const now = new Date();
 
- const current=
-  String(now.getHours()).padStart(2,"0")
-  +":"+
-  String(now.getMinutes()).padStart(2,"0");
+ const current =
+ String(now.getHours())
+ .padStart(2,"0")
+ + ":"
+ +
+ String(now.getMinutes())
+ .padStart(2,"0");
 
 
- const names={
+ const names = {
+
   Fajr:"Subuh",
   Dhuhr:"Zuhur",
   Asr:"Asar",
   Maghrib:"Magrib",
   Isha:"Isya"
+
  };
 
 
- Object.keys(names).forEach(key=>{
+ Object.keys(names)
+ .forEach(key=>{
 
   if(
    window.prayerTimes[key] &&
-   window.prayerTimes[key].startsWith(current)
+   window.prayerTimes[key]
+   .startsWith(current)
   ){
 
-   const keyDate=
-    new Date().toISOString()
-    .slice(0,10)
-    +"_"+key;
+   const today =
+   new Date()
+   .toISOString()
+   .slice(0,10);
 
 
-   if(localStorage.getItem("notif_"+keyDate))
+   const storageKey =
+   "notif_" +
+   today +
+   "_" +
+   key;
+
+
+   if(localStorage.getItem(storageKey))
     return;
 
 
    localStorage.setItem(
-    "notif_"+keyDate,
+    storageKey,
     "1"
    );
 
 
    new Notification(
-    "🕌 Waktu "+names[key],
+    "🕌 Waktu " + names[key],
     {
      body:
-      "Sudah masuk waktu "+names[key]+"."
+     "Sudah masuk waktu "
+     + names[key] + "."
     }
    );
 
@@ -2148,17 +2259,17 @@ setInterval(
 
 
 /* =====================================================
- KEAMANAN TAMPILAN
+ KEAMANAN
 ===================================================== */
 
 function escapeHTML(value){
 
  return String(value ?? "")
-  .replace(/&/g,"&amp;")
-  .replace(/</g,"&lt;")
-  .replace(/>/g,"&gt;")
-  .replace(/"/g,"&quot;")
-  .replace(/'/g,"&#039;");
+ .replace(/&/g,"&amp;")
+ .replace(/</g,"&lt;")
+ .replace(/>/g,"&gt;")
+ .replace(/"/g,"&quot;")
+ .replace(/'/g,"&#039;");
 
 }
 
@@ -2167,11 +2278,12 @@ function safeURL(value){
 
  try{
 
-  const url=new URL(value);
+  const url =
+  new URL(value);
 
   if(
-   url.protocol==="https:" ||
-   url.protocol==="http:"
+   url.protocol === "https:" ||
+   url.protocol === "http:"
   ){
 
    return url.href;
