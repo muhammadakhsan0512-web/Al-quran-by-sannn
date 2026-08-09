@@ -13,7 +13,8 @@
   --card:#fff;
   --text:#17211d;
   --muted:#718078;
-  --border:#e6ece8;
+  --border:#e3ebe6;
+  --danger:#c62828;
   --gold:#f4b400;
 }
 
@@ -22,69 +23,78 @@
   -webkit-tap-highlight-color:transparent;
 }
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
   font-family:Arial,sans-serif;
   background:var(--bg);
   color:var(--text);
-  padding-bottom:85px;
+  padding-bottom:90px;
 }
 
-.hidden{
-  display:none!important;
+body.dark{
+  --bg:#101614;
+  --card:#18201d;
+  --text:#f0f5f2;
+  --muted:#a5b1ab;
+  --border:#29352f;
 }
 
-/* ================= HEADER ================= */
+button,input,textarea,select{
+  font-family:inherit;
+}
+
+button{cursor:pointer}
+
+.hidden{display:none!important}
+
+/* HEADER */
 
 header{
   background:linear-gradient(135deg,var(--primary),var(--primary2));
   color:#fff;
-  padding:22px 18px 45px;
+  padding:22px 18px 42px;
   border-radius:0 0 30px 30px;
-  animation:slideDown .7s ease;
 }
 
 .header-top{
   max-width:750px;
   margin:auto;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
 }
 
 .logo{
-  font-size:24px;
+  font-size:23px;
   font-weight:bold;
 }
 
 .header-sub{
-  font-size:14px;
   margin-top:6px;
+  font-size:13px;
   opacity:.9;
 }
 
 .quran-icon{
-  font-size:32px;
-  animation:float 2.5s ease-in-out infinite;
+  font-size:34px;
 }
 
 .watermark{
   position:fixed;
-  top:12px;
-  right:14px;
+  top:10px;
+  right:12px;
   z-index:100;
-  color:white;
-  background:rgba(0,0,0,.16);
-  padding:7px 11px;
+  color:#fff;
+  background:rgba(0,0,0,.18);
+  padding:6px 10px;
   border-radius:20px;
-  font-size:12px;
+  font-size:11px;
   font-weight:bold;
-  letter-spacing:1px;
 }
+
+/* CONTAINER */
 
 .container{
   max-width:750px;
@@ -92,7 +102,7 @@ header{
   padding:18px;
 }
 
-/* ================= LOGIN ================= */
+/* AUTH */
 
 .auth-page{
   min-height:100vh;
@@ -105,22 +115,22 @@ header{
 
 .auth-card{
   width:100%;
-  max-width:400px;
-  background:#fff;
+  max-width:410px;
+  background:var(--card);
   border-radius:25px;
   padding:25px;
-  box-shadow:0 15px 40px rgba(0,0,0,.2);
+  box-shadow:0 15px 40px rgba(0,0,0,.22);
 }
 
 .auth-logo{
   text-align:center;
-  font-size:50px;
+  font-size:48px;
 }
 
 .auth-card h2{
   text-align:center;
-  margin:8px 0;
   color:var(--primary);
+  margin:8px 0;
 }
 
 .auth-card p{
@@ -129,210 +139,228 @@ header{
   font-size:14px;
 }
 
-.auth-input{
+.auth-input,
+.form-input,
+.form-textarea,
+.form-select{
   width:100%;
   padding:14px;
   margin-top:10px;
   border:1px solid var(--border);
   border-radius:13px;
   outline:none;
+  background:var(--card);
+  color:var(--text);
   font-size:15px;
 }
 
-.auth-btn{
+.form-textarea{
+  min-height:100px;
+  resize:vertical;
+}
+
+.auth-btn,
+.main-btn{
   width:100%;
   padding:14px;
-  margin-top:15px;
-  border:none;
+  margin-top:14px;
+  border:0;
   border-radius:14px;
   background:var(--primary);
   color:#fff;
   font-weight:bold;
-  font-size:16px;
-  cursor:pointer;
+  font-size:15px;
+}
+
+.secondary-btn{
+  width:100%;
+  padding:13px;
+  margin-top:10px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:var(--card);
+  color:var(--text);
+  font-weight:bold;
 }
 
 .auth-switch{
   text-align:center;
   margin-top:16px;
   color:var(--primary);
-  cursor:pointer;
   font-size:14px;
 }
 
-.auth-error{
-  color:#c62828;
+.error{
+  color:var(--danger);
   text-align:center;
   font-size:13px;
   margin-top:10px;
 }
 
-/* ================= QURAN ================= */
+/* CARDS */
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:18px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  margin-top:0;
+  color:var(--primary);
+}
+
+.info{
+  background:rgba(8,116,67,.07);
+  border:1px solid var(--border);
+  padding:13px;
+  border-radius:14px;
+  margin-bottom:10px;
+  line-height:1.6;
+}
+
+/* DONATION */
 
 .donation-banner{
   max-width:714px;
-  margin:-28px auto 18px;
+  margin:-27px auto 18px;
   background:linear-gradient(135deg,#075f38,#0c8c52);
   color:#fff;
   border-radius:22px;
   padding:17px;
   display:flex;
-  align-items:center;
   gap:14px;
+  align-items:center;
   box-shadow:0 10px 25px rgba(13,122,80,.2);
 }
 
 .donation-icon{
-  width:55px;
-  height:55px;
-  min-width:55px;
+  width:52px;
+  height:52px;
+  min-width:52px;
+  border-radius:17px;
   display:flex;
   align-items:center;
   justify-content:center;
-  border-radius:18px;
-  background:rgba(255,255,255,.16);
-  font-size:28px;
+  background:rgba(255,255,255,.15);
+  font-size:26px;
 }
 
-.donation-text{
-  display:flex;
-  flex-direction:column;
-  gap:4px;
-}
+/* SEARCH */
 
 .search-box{
-  background:#fff;
+  background:var(--card);
+  border:1px solid var(--border);
   border-radius:16px;
   display:flex;
   align-items:center;
   padding:0 15px;
-  margin-bottom:20px;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  margin-bottom:18px;
 }
 
 .search-box input{
   width:100%;
+  border:0;
+  outline:0;
   padding:16px 10px;
-  border:none;
-  outline:none;
-  font-size:15px;
+  background:transparent;
+  color:var(--text);
 }
 
 .section-title{
-  margin:20px 2px 14px;
-  font-size:19px;
+  margin:18px 2px 14px;
 }
 
+/* SURAH */
+
 .surah-card{
-  background:#fff;
+  background:var(--card);
   border:1px solid var(--border);
   border-radius:18px;
   padding:15px;
-  margin-bottom:12px;
+  margin-bottom:11px;
   display:flex;
   align-items:center;
   gap:13px;
   cursor:pointer;
-  transition:.2s;
-}
-
-.surah-card:active{
-  transform:scale(.97);
 }
 
 .number{
-  width:44px;
-  height:44px;
-  min-width:44px;
-  border-radius:14px;
+  width:43px;
+  height:43px;
+  min-width:43px;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
+  border-radius:13px;
   color:#fff;
   font-weight:bold;
   background:linear-gradient(135deg,var(--primary),var(--primary2));
 }
 
-.surah-info{
-  flex:1;
-}
-
-.surah-name{
-  font-size:16px;
-  font-weight:bold;
-}
-
+.surah-info{flex:1}
+.surah-name{font-weight:bold}
 .surah-desc{
-  margin-top:5px;
   color:var(--muted);
   font-size:13px;
+  margin-top:5px;
 }
 
 .arabic{
-  font-size:24px;
+  font-size:22px;
   text-align:right;
 }
 
-/* ================= DETAIL ================= */
+/* DETAIL */
 
 .detail-header{
   display:flex;
   align-items:center;
-  gap:14px;
-  margin-bottom:18px;
+  gap:12px;
+  margin-bottom:16px;
 }
 
 .back{
   width:43px;
   height:43px;
-  border:none;
+  border:0;
   border-radius:14px;
-  background:#fff;
+  background:var(--card);
+  color:var(--text);
   font-size:20px;
-  cursor:pointer;
 }
 
 .surah-hero{
   background:linear-gradient(135deg,var(--primary),var(--primary2));
   color:#fff;
   border-radius:24px;
-  padding:25px;
+  padding:24px;
   text-align:center;
-  margin-bottom:18px;
+  margin-bottom:15px;
 }
 
 .name-arab{
   font-size:34px;
-  margin-bottom:10px;
-}
-
-.surah-hero h2{
-  margin:5px;
-}
-
-.surah-hero p{
-  margin:6px;
-  opacity:.9;
-  font-size:14px;
 }
 
 .bismillah{
-  background:#fff;
+  background:var(--card);
   border:1px solid var(--border);
   border-radius:18px;
   padding:20px;
   text-align:center;
   font-size:25px;
-  line-height:1.8;
-  margin-bottom:15px;
+  margin-bottom:14px;
 }
 
 .ayat{
-  background:#fff;
+  background:var(--card);
   border:1px solid var(--border);
   border-radius:18px;
   padding:18px;
-  margin-bottom:14px;
+  margin-bottom:13px;
 }
 
 .ayat-number{
@@ -345,42 +373,48 @@ header{
 }
 
 .ayat-arab{
+  direction:rtl;
+  text-align:right;
   font-size:27px;
   line-height:2;
-  text-align:right;
-  direction:rtl;
-  margin:16px 0;
+  margin:15px 0;
 }
 
 .ayat-arti{
   border-top:1px solid var(--border);
-  padding-top:13px;
-  color:#4e5a53;
+  padding-top:12px;
+  color:var(--muted);
   line-height:1.7;
   font-size:14px;
 }
 
-/* ================= SALAT ================= */
+.ayat-actions{
+  display:flex;
+  gap:8px;
+  margin-top:12px;
+}
+
+.small-btn{
+  flex:1;
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  padding:10px;
+  border-radius:12px;
+}
+
+/* PRAYER */
 
 .location-card{
   background:linear-gradient(135deg,var(--primary),var(--primary2));
   color:#fff;
   padding:22px;
   border-radius:22px;
-  margin-bottom:18px;
-}
-
-.location-card h2{
-  margin:0 0 8px;
-}
-
-.location-card p{
-  margin:0;
-  opacity:.9;
+  margin-bottom:15px;
 }
 
 .date{
-  background:#fff;
+  background:var(--card);
   border:1px solid var(--border);
   border-radius:16px;
   padding:14px;
@@ -396,10 +430,10 @@ header{
 }
 
 .prayer{
-  background:#fff;
+  background:var(--card);
   border:1px solid var(--border);
   border-radius:18px;
-  padding:18px;
+  padding:17px;
 }
 
 .prayer-name{
@@ -414,102 +448,143 @@ header{
   color:var(--primary);
 }
 
-/* ================= REWARD ================= */
+/* SETORAN */
 
-.reward-hero{
-  background:linear-gradient(135deg,#f4b400,#e58b00);
+.setoran-hero{
+  background:linear-gradient(135deg,#087443,#13a66b);
   color:#fff;
-  padding:25px;
+  padding:24px;
   border-radius:24px;
   text-align:center;
-  box-shadow:0 12px 28px rgba(229,139,0,.2);
+  margin-bottom:16px;
 }
 
-.reward-icon{
-  font-size:45px;
-}
-
-.reward-card{
-  margin-top:16px;
-  background:#fff;
-  border:1px solid var(--border);
+.status{
+  display:inline-block;
+  padding:7px 11px;
   border-radius:20px;
-  padding:20px;
-}
-
-.reward-card h3{
-  margin:0 0 15px;
-  color:var(--primary);
-}
-
-.reward-info{
-  padding:13px;
-  margin-bottom:10px;
-  border-radius:14px;
-  background:#f7faf8;
-  border:1px solid var(--border);
-  line-height:1.6;
-}
-
-.phone{
-  display:block;
-  margin-top:15px;
-  width:100%;
-  padding:15px;
-  border:none;
-  border-radius:15px;
-  background:var(--primary);
-  color:#fff;
-  font-size:16px;
+  font-size:12px;
   font-weight:bold;
+}
+
+.status.waiting{
+  background:#fff3cd;
+  color:#856404;
+}
+
+.status.accepted{
+  background:#d4edda;
+  color:#155724;
+}
+
+.status.rejected{
+  background:#f8d7da;
+  color:#721c24;
+}
+
+.video-box{
+  border:2px dashed #9ab5a6;
+  border-radius:16px;
+  padding:18px;
   text-align:center;
-  text-decoration:none;
+  margin-top:10px;
 }
 
-/* ================= OWNER & AKUN ================= */
-
-.owner-card{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:20px;
-  margin-top:16px;
-}
-
-.owner-card h3{
-  color:var(--primary);
-  margin-top:0;
-}
-
-.user-item{
-  background:#f7faf8;
-  border:1px solid var(--border);
+.preview{
+  width:100%;
+  max-height:300px;
+  margin-top:12px;
   border-radius:14px;
+}
+
+/* OWNER */
+
+.owner-hero{
+  background:linear-gradient(135deg,#1d1d1d,#444);
+  color:#fff;
+  padding:24px;
+  border-radius:24px;
+  text-align:center;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:15px;
+}
+
+.stat{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:16px;
+  text-align:center;
+}
+
+.stat b{
+  display:block;
+  font-size:25px;
+  color:var(--primary);
+}
+
+.user-item,
+.submission-item{
+  background:rgba(8,116,67,.05);
+  border:1px solid var(--border);
+  border-radius:15px;
   padding:14px;
   margin-bottom:10px;
+  line-height:1.7;
 }
 
-.logout-btn{
-  width:100%;
-  padding:15px;
-  margin-top:16px;
-  border:none;
-  border-radius:14px;
+.owner-actions{
+  display:flex;
+  gap:8px;
+  margin-top:10px;
+}
+
+.accept{
+  flex:1;
+  border:0;
+  border-radius:12px;
+  padding:11px;
+  background:#16834f;
+  color:#fff;
+}
+
+.reject{
+  flex:1;
+  border:0;
+  border-radius:12px;
+  padding:11px;
   background:#c62828;
   color:#fff;
-  font-weight:bold;
-  font-size:16px;
-  cursor:pointer;
 }
 
-/* ================= NAV ================= */
+/* PROGRESS */
+
+.progress-wrap{
+  background:var(--border);
+  height:12px;
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:10px;
+}
+
+.progress-bar{
+  height:100%;
+  background:linear-gradient(90deg,var(--primary),var(--primary2));
+}
+
+/* BOTTOM */
 
 .bottom-nav{
   position:fixed;
-  bottom:0;
   left:0;
   right:0;
-  background:#fff;
+  bottom:0;
+  background:var(--card);
   border-top:1px solid var(--border);
   z-index:50;
 }
@@ -518,21 +593,22 @@ header{
   max-width:750px;
   margin:auto;
   display:flex;
+  overflow-x:auto;
 }
 
 .nav-btn{
   flex:1;
-  border:none;
+  min-width:72px;
+  border:0;
   background:transparent;
-  padding:10px 4px;
-  cursor:pointer;
   color:var(--muted);
-  font-size:12px;
+  padding:9px 4px;
+  font-size:11px;
 }
 
 .nav-btn span{
   display:block;
-  font-size:22px;
+  font-size:21px;
   margin-bottom:3px;
 }
 
@@ -541,81 +617,47 @@ header{
   font-weight:bold;
 }
 
-.loading{
-  text-align:center;
-  color:var(--muted);
-  padding:30px;
+/* NOTIFICATION */
+
+.notification{
+  position:fixed;
+  top:65px;
+  left:50%;
+  transform:translateX(-50%);
+  width:calc(100% - 30px);
+  max-width:430px;
+  background:var(--card);
+  border:1px solid var(--border);
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+  border-radius:16px;
+  padding:14px;
+  z-index:200;
+  animation:notify .35s ease;
 }
 
-.error{
-  background:#fff3f3;
-  color:#b33;
-  padding:15px;
-  border-radius:14px;
-  text-align:center;
-}
-
-/* ================= ANIMASI ================= */
-
-@keyframes slideDown{
-  from{
-    opacity:0;
-    transform:translateY(-30px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-@keyframes float{
-  0%,100%{
-    transform:translateY(0);
-  }
-  50%{
-    transform:translateY(-6px);
-  }
+@keyframes notify{
+  from{opacity:0;transform:translate(-50%,-15px)}
+  to{opacity:1;transform:translate(-50%,0)}
 }
 
 @media(max-width:500px){
-
-  .container{
-    padding:14px;
-  }
-
+  .container{padding:14px}
   .donation-banner{
     margin-left:14px;
     margin-right:14px;
   }
-
-  .ayat-arab{
-    font-size:23px;
-  }
-
-  .arabic{
-    font-size:21px;
-  }
-
-  .nav-btn{
-    font-size:10px;
-  }
-
-  .nav-btn span{
-    font-size:20px;
-  }
+  .ayat-arab{font-size:23px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ===================================================== -->
-<!-- LOGIN / DAFTAR -->
-<!-- ===================================================== -->
+<div id="notification" class="notification hidden"></div>
+
+<!-- ================= AUTH ================= -->
 
 <div id="authPage" class="auth-page">
-
-  <!-- LOGIN -->
 
   <div class="auth-card" id="loginBox">
 
@@ -623,13 +665,12 @@ header{
 
     <h2>Al-Qur'an Digital</h2>
 
-    <p>Silakan login untuk melanjutkan</p>
+    <p>Login untuk melanjutkan</p>
 
     <input
       class="auth-input"
       id="loginUsername"
       placeholder="Username"
-      autocomplete="username"
     >
 
     <input
@@ -637,23 +678,20 @@ header{
       id="loginPassword"
       type="password"
       placeholder="Password"
-      autocomplete="current-password"
     >
 
     <button class="auth-btn" onclick="login()">
       🔐 Login
     </button>
 
-    <div id="loginError" class="auth-error"></div>
+    <div id="loginError" class="error"></div>
 
-    <div class="auth-switch" onclick="tampilkanDaftar()">
+    <div class="auth-switch" onclick="showRegister()">
       Belum punya akun? <b>Daftar</b>
     </div>
 
   </div>
 
-
-  <!-- DAFTAR -->
 
   <div class="auth-card hidden" id="registerBox">
 
@@ -661,13 +699,12 @@ header{
 
     <h2>Daftar Akun</h2>
 
-    <p>Buat akun baru</p>
+    <p>Buat akun untuk menggunakan fitur setoran.</p>
 
     <input
       class="auth-input"
       id="registerUsername"
       placeholder="Buat username"
-      autocomplete="username"
     >
 
     <input
@@ -675,16 +712,15 @@ header{
       id="registerPassword"
       type="password"
       placeholder="Buat password"
-      autocomplete="new-password"
     >
 
-    <button class="auth-btn" onclick="daftarAkun()">
+    <button class="auth-btn" onclick="registerUser()">
       📝 Daftar
     </button>
 
-    <div id="registerError" class="auth-error"></div>
+    <div id="registerError" class="error"></div>
 
-    <div class="auth-switch" onclick="tampilkanLogin()">
+    <div class="auth-switch" onclick="showLogin()">
       Sudah punya akun? <b>Login</b>
     </div>
 
@@ -693,9 +729,7 @@ header{
 </div>
 
 
-<!-- ===================================================== -->
-<!-- WEBSITE -->
-<!-- ===================================================== -->
+<!-- ================= WEBSITE ================= -->
 
 <div id="website" class="hidden">
 
@@ -706,78 +740,54 @@ header{
   <div class="header-top">
 
     <div>
-
-      <div class="logo">
-        ☪ Al-Qur'an Digital
-      </div>
-
+      <div class="logo">☪ Al-Qur'an Digital</div>
       <div class="header-sub">
-        Baca Al-Qur'an kapan saja
+        Baca, hafalkan, dan setor hafalan
       </div>
-
     </div>
 
-    <div class="quran-icon">
-      📖
-    </div>
+    <div class="quran-icon">📖</div>
 
   </div>
 
 </header>
 
 
-<!-- ===================================================== -->
-<!-- QURAN -->
-<!-- ===================================================== -->
+<!-- ================= QURAN ================= -->
 
 <div id="quranPage">
 
   <div class="donation-banner">
 
-    <div class="donation-icon">
-      ☪
-    </div>
+    <div class="donation-icon">☪</div>
 
-    <div class="donation-text">
-
-      <b>📖 Baca Sepuasnya</b>
-
-      <span>
-        🤲 Infaq Seikhlasnya
-      </span>
-
-      <small>
-        💳 Dana: 895-3915-49359
-      </small>
-
+    <div>
+      <b>📖 Baca Al-Qur'an</b><br>
+      <span>🤲 Semoga bermanfaat</span><br>
+      <small>Al-Qur'an Digital by sann</small>
     </div>
 
   </div>
 
-
   <div class="container">
 
     <div class="search-box">
-
       🔎
-
       <input
-        type="text"
         id="search"
         placeholder="Cari surah..."
         oninput="cariSurah()"
       >
-
     </div>
-
 
     <h2 class="section-title">
       Daftar 114 Surah
     </h2>
 
-
-    <div id="surahList" class="loading">
-      Memuat daftar surah...
+    <div id="surahList">
+      <div class="card">
+        Memuat daftar surah...
+      </div>
     </div>
 
   </div>
@@ -785,9 +795,7 @@ header{
 </div>
 
 
-<!-- ===================================================== -->
-<!-- DETAIL SURAH -->
-<!-- ===================================================== -->
+<!-- ================= DETAIL ================= -->
 
 <div id="detailPage" class="hidden">
 
@@ -795,35 +803,21 @@ header{
 
     <div class="detail-header">
 
-      <button
-        class="back"
-        onclick="kembali()"
-      >
+      <button class="back" onclick="kembali()">
         ←
       </button>
 
       <div>
-
-        <b id="detailTitle">
-          Surah
-        </b>
-
-        <br>
-
-        <small style="color:#718078">
+        <b id="detailTitle">Surah</b><br>
+        <small style="color:var(--muted)">
           Al-Qur'an Digital
         </small>
-
       </div>
 
     </div>
 
-
-    <div
-      id="detailContent"
-      class="loading"
-    >
-      Memuat surah...
+    <div id="detailContent">
+      <div class="card">Memuat...</div>
     </div>
 
   </div>
@@ -831,9 +825,7 @@ header{
 </div>
 
 
-<!-- ===================================================== -->
-<!-- WAKTU SALAT -->
-<!-- ===================================================== -->
+<!-- ================= SHOLAT ================= -->
 
 <div id="prayerPage" class="hidden">
 
@@ -841,102 +833,48 @@ header{
 
     <div class="location-card">
 
-      <h2>
-        🕌 Waktu Salat
-      </h2>
+      <h2>🕌 Waktu Salat</h2>
 
       <p>
         Batam, Kepulauan Riau
       </p>
 
+      <button
+        class="secondary-btn"
+        onclick="aktifkanNotifikasi()"
+      >
+        🔔 Aktifkan Notifikasi Salat
+      </button>
+
     </div>
 
-
-    <div
-      class="date"
-      id="todayDate"
-    ></div>
-
+    <div class="date" id="todayDate"></div>
 
     <div class="prayer-grid">
 
       <div class="prayer">
-
-        <div class="prayer-name">
-          🌅 Subuh
-        </div>
-
-        <div
-          class="prayer-time"
-          id="Fajr"
-        >
-          --:--
-        </div>
-
+        <div class="prayer-name">🌅 Subuh</div>
+        <div class="prayer-time" id="Fajr">--:--</div>
       </div>
 
-
       <div class="prayer">
-
-        <div class="prayer-name">
-          ☀️ Zuhur
-        </div>
-
-        <div
-          class="prayer-time"
-          id="Dhuhr"
-        >
-          --:--
-        </div>
-
+        <div class="prayer-name">☀️ Zuhur</div>
+        <div class="prayer-time" id="Dhuhr">--:--</div>
       </div>
 
-
       <div class="prayer">
-
-        <div class="prayer-name">
-          🌤️ Asar
-        </div>
-
-        <div
-          class="prayer-time"
-          id="Asr"
-        >
-          --:--
-        </div>
-
+        <div class="prayer-name">🌤️ Asar</div>
+        <div class="prayer-time" id="Asr">--:--</div>
       </div>
 
-
       <div class="prayer">
-
-        <div class="prayer-name">
-          🌇 Magrib
-        </div>
-
-        <div
-          class="prayer-time"
-          id="Maghrib"
-        >
-          --:--
-        </div>
-
+        <div class="prayer-name">🌇 Magrib</div>
+        <div class="prayer-time" id="Maghrib">--:--</div>
       </div>
 
-
       <div class="prayer">
-
-        <div class="prayer-name">
-          🌙 Isya
-        </div>
-
-        <div
-          class="prayer-time"
-          id="Isha"
-        >
-          --:--
-        </div>
-
+        <div class="prayer-name">🌙 Isya</div>
+        <div class="prayer-time" id="Isha">--:--</div>
       </div>
 
     </div>
@@ -946,166 +884,210 @@ header{
 </div>
 
 
-<!-- ===================================================== -->
-<!-- REWARD -->
-<!-- ===================================================== -->
+<!-- ================= SETORAN ================= -->
 
-<div id="rewardPage" class="hidden">
+<div id="setoranPage" class="hidden">
 
   <div class="container">
 
-    <div class="reward-hero">
+    <div class="setoran-hero">
 
-      <div class="reward-icon">
-        🏆📖
-      </div>
+      <div style="font-size:45px">🎤📖</div>
 
-      <h2>
-        Reward Membaca Al-Qur'an
-      </h2>
+      <h2>Setoran Hafalan</h2>
 
       <p>
-        Baca Al-Qur'an dan ikuti prosedur klaim reward.
+        Isi data setoran dan kirim bukti video.
       </p>
 
     </div>
 
 
-    <div class="reward-card">
+    <div class="card">
 
-      <h3>
-        💰 Informasi Reward
-      </h3>
+      <h3>📝 Data Setoran</h3>
 
-
-      <div class="reward-info">
-
-        📖 <b>Reward dasar:</b>
-
-        sekitar Rp100 untuk setiap surah.
-
-      </div>
-
-
-      <div class="reward-info">
-
-        ⭐ <b>Surah panjang:</b>
-
-        nominal dapat lebih besar tergantung
-        panjang surah dan ketentuan verifikasi.
-
-      </div>
-
-    </div>
-
-
-    <div class="reward-card">
-
-      <h3>
-        📱 Cara Mengajukan Reward
-      </h3>
-
-
-      <div class="reward-info">
-
-        <b>1.</b>
-
-        Baca surah Al-Qur'an melalui web ini.
-
-      </div>
-
-
-      <div class="reward-info">
-
-        <b>2.</b>
-
-        Rekam video sebagai bukti.
-
-      </div>
-
-
-      <div class="reward-info">
-
-        <b>3.</b>
-
-        Kirim bukti kepada penyelenggara.
-
-      </div>
-
-
-      <div class="reward-info">
-
-        <b>4.</b>
-
-        Tunggu proses verifikasi.
-
-      </div>
-
-
-      <a
-        class="phone"
-        href="tel:089628180066"
+      <input
+        class="form-input"
+        id="setorNama"
+        placeholder="Nama"
       >
-        📞 Hubungi: 089628180066
-      </a>
 
-    </div>
+      <input
+        class="form-input"
+        id="setorKelas"
+        placeholder="Kelas"
+      >
 
-  </div>
+      <input
+        class="form-input"
+        id="setorUmur"
+        type="number"
+        placeholder="Umur"
+      >
 
-</div>
+      <input
+        class="form-input"
+        id="setorJumlah"
+        type="number"
+        min="1"
+        placeholder="Berapa surah ingin disetor?"
+      >
 
+      <textarea
+        class="form-textarea"
+        id="setorSurah"
+        placeholder="Nama surah yang ingin disetor&#10;Contoh: Al-Fatihah, Al-Ikhlas"
+      ></textarea>
 
-<!-- ===================================================== -->
-<!-- AKUN BIASA -->
-<!-- ===================================================== -->
-
-<div id="accountPage" class="hidden">
-
-  <div class="container">
-
-    <div class="reward-hero">
-
-      <div class="reward-icon">
-        👤
-      </div>
-
-      <h2>
-        Akun Saya
-      </h2>
-
-      <p>
-        Informasi akun yang sedang digunakan.
-      </p>
-
-    </div>
-
-
-    <div class="owner-card">
-
-      <h3>
-        👤 Informasi Akun
+      <h3 style="margin-top:20px">
+        🎥 Bukti Video
       </h3>
 
+      <div class="info">
 
-      <p>
-        <b>Username:</b>
-        <span id="accountUsername">
-          -
-        </span>
-      </p>
+        <b>Aturan video:</b><br><br>
 
+        1. Awal video wajib memperkenalkan diri.<br>
+        2. Sebutkan nama dan kelas.<br>
+        3. Sebutkan surah yang ingin disetor.<br>
+        4. Bacaan harus terdengar jelas.<br>
+        5. Video tidak boleh diedit untuk menyamarkan bacaan.
 
-      <p>
-        <b>Status:</b>
-        <span id="accountStatus">
-          -
-        </span>
-      </p>
+      </div>
 
+      <input
+        class="form-input"
+        id="videoFile"
+        type="file"
+        accept="video/*"
+        onchange="previewVideo()"
+      >
+
+      <video
+        id="videoPreview"
+        class="preview hidden"
+        controls
+      ></video>
+
+      <input
+        class="form-input"
+        id="videoSource"
+        placeholder="Sumber/link video (opsional)"
+      >
 
       <button
-        class="logout-btn"
+        class="main-btn"
+        onclick="kirimSetoran()"
+      >
+        📤 Kirim Setoran
+      </button>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>📋 Setoran Saya</h3>
+
+      <div id="mySubmissions">
+        Belum ada setoran.
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= OWNER ================= -->
+
+<div id="ownerPage" class="hidden">
+
+  <div class="container">
+
+    <div class="owner-hero">
+
+      <div style="font-size:45px">👑</div>
+
+      <h2>Dashboard Owner</h2>
+
+      <p>
+        Kelola pengguna dan setoran hafalan.
+      </p>
+
+    </div>
+
+
+    <div class="stats">
+
+      <div class="stat">
+        <b id="statUsers">0</b>
+        Pengguna
+      </div>
+
+      <div class="stat">
+        <b id="statSubmissions">0</b>
+        Setoran
+      </div>
+
+      <div class="stat">
+        <b id="statWaiting">0</b>
+        Menunggu
+      </div>
+
+      <div class="stat">
+        <b id="statAccepted">0</b>
+        Diterima
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>👥 Pengguna Terdaftar</h3>
+
+      <div id="userList">
+        Belum ada pengguna.
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>🎤 Daftar Setoran</h3>
+
+      <div id="ownerSubmissions">
+        Belum ada setoran.
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>⚙️ Pengaturan</h3>
+
+      <button
+        class="secondary-btn"
+        onclick="toggleDarkMode()"
+      >
+        🌙 Mode Gelap / Terang
+      </button>
+
+      <button
+        class="secondary-btn"
+        onclick="tampilkanProgress()"
+      >
+        📊 Lihat Progress
+      </button>
+
+      <button
+        class="main-btn"
+        style="background:#c62828"
         onclick="logout()"
       >
         🚪 Logout
@@ -1118,78 +1100,49 @@ header{
 </div>
 
 
-<!-- ===================================================== -->
-<!-- OWNER -->
-<!-- ===================================================== -->
+<!-- ================= PROGRESS ================= -->
 
-<div id="ownerPage" class="hidden">
+<div id="progressPage" class="hidden">
 
   <div class="container">
 
-    <div class="reward-hero">
+    <div class="card">
 
-      <div class="reward-icon">
-        👑
+      <h2>📊 Progress Membaca</h2>
+
+      <p>
+        Progress berdasarkan surah yang pernah dibuka.
+      </p>
+
+      <div id="progressText">
+        0 / 114 surah
       </div>
 
-      <h2>
-        Panel Owner
-      </h2>
+      <div class="progress-wrap">
 
-      <p>
-        Kelola akun pengguna yang terdaftar.
-      </p>
+        <div
+          class="progress-bar"
+          id="progressBar"
+          style="width:0%"
+        ></div>
 
-    </div>
-
-
-    <div class="owner-card">
-
-      <h3>
-        👑 Akun Owner
-      </h3>
-
-      <p>
-        <b>Username:</b>
-        M.akhsan
-      </p>
-
-      <p>
-        <b>Status:</b>
-        Owner
-      </p>
-
-    </div>
-
-
-    <div class="owner-card">
-
-      <h3>
-        👥 Pengguna Terdaftar
-      </h3>
-
-      <div id="userList">
-        Belum ada pengguna.
       </div>
 
+      <button
+        class="main-btn"
+        onclick="bukaQuran()"
+      >
+        📖 Kembali ke Al-Qur'an
+      </button>
+
     </div>
-
-
-    <button
-      class="logout-btn"
-      onclick="logout()"
-    >
-      🚪 Logout
-    </button>
 
   </div>
 
 </div>
 
 
-<!-- ===================================================== -->
-<!-- MENU BAWAH -->
-<!-- ===================================================== -->
+<!-- ================= NAV ================= -->
 
 <div class="bottom-nav">
 
@@ -1204,36 +1157,23 @@ header{
       Al-Qur'an
     </button>
 
-
     <button
       class="nav-btn"
       id="prayerBtn"
       onclick="bukaSholat()"
     >
       <span>🕌</span>
-      Waktu Salat
+      Salat
     </button>
-
 
     <button
       class="nav-btn"
-      id="rewardBtn"
-      onclick="bukaReward()"
+      id="setoranBtn"
+      onclick="bukaSetoran()"
     >
-      <span>🏆</span>
-      Reward
+      <span>🎤</span>
+      Setoran
     </button>
-
-
-    <button
-      class="nav-btn"
-      id="accountBtn"
-      onclick="bukaAkun()"
-    >
-      <span>👤</span>
-      Akun
-    </button>
-
 
     <button
       class="nav-btn hidden"
@@ -1242,6 +1182,15 @@ header{
     >
       <span>👑</span>
       Owner
+    </button>
+
+    <button
+      class="nav-btn"
+      id="darkBtn"
+      onclick="toggleDarkMode()"
+    >
+      <span>🌙</span>
+      Tema
     </button>
 
   </div>
@@ -1253,20 +1202,19 @@ header{
 
 <script>
 
-/* ===================================================== */
-/* VARIABEL */
-/* ===================================================== */
+/* ==================================================
+   DATA DASAR
+================================================== */
 
 let semuaSurah = [];
-
-
-/* ===================================================== */
-/* AKUN */
-/* ===================================================== */
 
 const OWNER_USERNAME = "M.akhsan";
 const OWNER_PASSWORD = "051214";
 
+
+/* ==================================================
+   LOCAL STORAGE
+================================================== */
 
 function ambilPengguna(){
 
@@ -1276,12 +1224,38 @@ function ambilPengguna(){
 
 }
 
+function simpanPengguna(data){
 
-/* ===================================================== */
-/* LOGIN / DAFTAR */
-/* ===================================================== */
+  localStorage.setItem(
+    "penggunaAlquran",
+    JSON.stringify(data)
+  );
 
-function tampilkanLogin(){
+}
+
+function ambilSetoran(){
+
+  return JSON.parse(
+    localStorage.getItem("setoranHafalan") || "[]"
+  );
+
+}
+
+function simpanSetoran(data){
+
+  localStorage.setItem(
+    "setoranHafalan",
+    JSON.stringify(data)
+  );
+
+}
+
+
+/* ==================================================
+   AUTH
+================================================== */
+
+function showLogin(){
 
   document.getElementById("loginBox")
     .classList.remove("hidden");
@@ -1289,13 +1263,9 @@ function tampilkanLogin(){
   document.getElementById("registerBox")
     .classList.add("hidden");
 
-  document.getElementById("loginError")
-    .textContent="";
-
 }
 
-
-function tampilkanDaftar(){
+function showRegister(){
 
   document.getElementById("loginBox")
     .classList.add("hidden");
@@ -1303,22 +1273,14 @@ function tampilkanDaftar(){
   document.getElementById("registerBox")
     .classList.remove("hidden");
 
-  document.getElementById("registerError")
-    .textContent="";
-
 }
 
 
-/* ===================================================== */
-/* DAFTAR AKUN */
-/* ===================================================== */
-
-function daftarAkun(){
+function registerUser(){
 
   const username =
     document.getElementById("registerUsername")
-    .value
-    .trim();
+    .value.trim();
 
   const password =
     document.getElementById("registerPassword")
@@ -1349,39 +1311,13 @@ function daftarAkun(){
   }
 
 
-  if(username.length < 3){
-
-    error.textContent =
-      "Username minimal 3 karakter.";
-
-    return;
-
-  }
+  const users = ambilPengguna();
 
 
-  if(password.length < 4){
-
-    error.textContent =
-      "Password minimal 4 karakter.";
-
-    return;
-
-  }
-
-
-  const pengguna =
-    ambilPengguna();
-
-
-  const sudahAda =
-    pengguna.some(
-      user =>
-        user.username.toLowerCase() ===
-        username.toLowerCase()
-    );
-
-
-  if(sudahAda){
+  if(users.some(
+    u => u.username.toLowerCase() ===
+         username.toLowerCase()
+  )){
 
     error.textContent =
       "Username sudah digunakan.";
@@ -1391,51 +1327,37 @@ function daftarAkun(){
   }
 
 
-  pengguna.push({
+  users.push({
+
+    id:Date.now(),
 
     username:username,
 
     password:password,
 
-    tanggal:
-      new Date().toLocaleString("id-ID")
+    tanggal:new Date().toLocaleString("id-ID")
 
   });
 
 
-  localStorage.setItem(
-    "penggunaAlquran",
-    JSON.stringify(pengguna)
-  );
+  simpanPengguna(users);
 
 
-  alert(
-    "Pendaftaran berhasil! Silakan login."
-  );
+  alert("Pendaftaran berhasil.");
 
+  document.getElementById("registerUsername").value="";
+  document.getElementById("registerPassword").value="";
 
-  document.getElementById("registerUsername")
-    .value="";
-
-  document.getElementById("registerPassword")
-    .value="";
-
-
-  tampilkanLogin();
+  showLogin();
 
 }
 
-
-/* ===================================================== */
-/* LOGIN */
-/* ===================================================== */
 
 function login(){
 
   const username =
     document.getElementById("loginUsername")
-    .value
-    .trim();
+    .value.trim();
 
   const password =
     document.getElementById("loginPassword")
@@ -1445,25 +1367,23 @@ function login(){
     document.getElementById("loginError");
 
 
-  error.textContent="";
-
-
-  /* OWNER */
-
   if(
     username === OWNER_USERNAME &&
     password === OWNER_PASSWORD
   ){
 
+    const loginData = {
+
+      username:OWNER_USERNAME,
+
+      owner:true
+
+    };
+
+
     localStorage.setItem(
       "loginAlquran",
-      JSON.stringify({
-
-        username:OWNER_USERNAME,
-
-        owner:true
-
-      })
+      JSON.stringify(loginData)
     );
 
 
@@ -1474,18 +1394,14 @@ function login(){
   }
 
 
-  /* PENGGUNA BIASA */
-
-  const pengguna =
-    ambilPengguna();
+  const users = ambilPengguna();
 
 
-  const user =
-    pengguna.find(
-      item =>
-        item.username === username &&
-        item.password === password
-    );
+  const user = users.find(
+    u =>
+      u.username === username &&
+      u.password === password
+  );
 
 
   if(!user){
@@ -1515,10 +1431,6 @@ function login(){
 }
 
 
-/* ===================================================== */
-/* MASUK WEBSITE */
-/* ===================================================== */
-
 function masukWebsite(isOwner){
 
   document.getElementById("authPage")
@@ -1529,10 +1441,7 @@ function masukWebsite(isOwner){
 
 
   document.getElementById("ownerBtn")
-    .classList.toggle(
-      "hidden",
-      !isOwner
-    );
+    .classList.toggle("hidden",!isOwner);
 
 
   bukaQuran();
@@ -1540,109 +1449,113 @@ function masukWebsite(isOwner){
 }
 
 
-/* ===================================================== */
-/* LOGOUT */
-/* ===================================================== */
-
 function logout(){
 
-  localStorage.removeItem(
-    "loginAlquran"
-  );
-
+  localStorage.removeItem("loginAlquran");
 
   document.getElementById("website")
     .classList.add("hidden");
 
-
   document.getElementById("authPage")
     .classList.remove("hidden");
 
-
-  document.getElementById("loginUsername")
-    .value="";
-
-  document.getElementById("loginPassword")
-    .value="";
-
-
-  tampilkanLogin();
+  showLogin();
 
 }
 
 
-/* ===================================================== */
-/* AKUN */
-/* ===================================================== */
+/* ==================================================
+   NAVIGATION
+================================================== */
 
-function bukaAkun(){
+function sembunyikanSemua(){
 
-  const login =
-    JSON.parse(
-      localStorage.getItem(
-        "loginAlquran"
-      ) || "null"
-    );
+  [
+    "quranPage",
+    "detailPage",
+    "prayerPage",
+    "setoranPage",
+    "ownerPage",
+    "progressPage"
+  ].forEach(id=>{
 
+    document.getElementById(id)
+      .classList.add("hidden");
 
-  if(!login){
-
-    logout();
-
-    return;
-
-  }
-
-
-  sembunyikanSemua();
-
-
-  document.getElementById("accountPage")
-    .classList.remove("hidden");
-
-
-  document.getElementById("accountUsername")
-    .textContent =
-    login.username;
-
-
-  document.getElementById("accountStatus")
-    .textContent =
-    login.owner
-      ? "Owner 👑"
-      : "Pengguna biasa";
-
-
-  aktifkanMenu("accountBtn");
-
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
   });
 
 }
 
 
-/* ===================================================== */
-/* OWNER */
-/* ===================================================== */
+function aktifkanMenu(id){
+
+  document.querySelectorAll(".nav-btn")
+    .forEach(btn=>{
+      btn.classList.remove("active");
+    });
+
+  const btn=document.getElementById(id);
+
+  if(btn) btn.classList.add("active");
+
+}
+
+
+function bukaQuran(){
+
+  sembunyikanSemua();
+
+  document.getElementById("quranPage")
+    .classList.remove("hidden");
+
+  aktifkanMenu("quranBtn");
+
+  window.scrollTo(0,0);
+
+}
+
+
+function bukaSholat(){
+
+  sembunyikanSemua();
+
+  document.getElementById("prayerPage")
+    .classList.remove("hidden");
+
+  aktifkanMenu("prayerBtn");
+
+  muatWaktuSholat();
+
+}
+
+
+function bukaSetoran(){
+
+  sembunyikanSemua();
+
+  document.getElementById("setoranPage")
+    .classList.remove("hidden");
+
+  aktifkanMenu("setoranBtn");
+
+  isiDataSetoran();
+
+  tampilkanSetoranSaya();
+
+}
+
 
 function bukaOwner(){
 
   const login =
     JSON.parse(
-      localStorage.getItem(
-        "loginAlquran"
-      ) || "null"
+      localStorage.getItem("loginAlquran") || "null"
     );
 
 
   if(!login || !login.owner){
 
-    alert(
-      "Menu ini khusus Owner."
-    );
+    alert("Menu Owner hanya untuk Owner.");
 
     return;
 
@@ -1651,129 +1564,46 @@ function bukaOwner(){
 
   sembunyikanSemua();
 
-
   document.getElementById("ownerPage")
     .classList.remove("hidden");
 
-
   aktifkanMenu("ownerBtn");
 
-
-  tampilkanPengguna();
-
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+  tampilkanOwner();
 
 }
 
 
-/* ===================================================== */
-/* TAMPILKAN PENGGUNA */
-/* ===================================================== */
+function tampilkanProgress(){
 
-function tampilkanPengguna(){
+  sembunyikanSemua();
 
-  const list =
-    document.getElementById("userList");
+  document.getElementById("progressPage")
+    .classList.remove("hidden");
 
-  const pengguna =
-    ambilPengguna();
+  const opened =
+    JSON.parse(
+      localStorage.getItem("surahDibaca") || "[]"
+    );
 
+  const jumlah = opened.length;
 
-  if(pengguna.length === 0){
+  const persen =
+    Math.min(100,(jumlah/114)*100);
 
-    list.innerHTML=`
+  document.getElementById("progressText")
+    .textContent =
+    `${jumlah} / 114 surah`;
 
-      <div class="loading">
-        Belum ada pengguna yang mendaftar.
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
-  list.innerHTML =
-    pengguna.map(
-      (user,index)=>`
-
-        <div class="user-item">
-
-          <b>
-            👤 ${index+1}. ${escapeHTML(user.username)}
-          </b>
-
-          <br>
-
-          <small>
-            Password: ${escapeHTML(user.password)}
-          </small>
-
-          <br>
-
-          <small>
-            Daftar: ${escapeHTML(user.tanggal)}
-          </small>
-
-        </div>
-
-      `
-    ).join("");
+  document.getElementById("progressBar")
+    .style.width = persen+"%";
 
 }
 
 
-/* ===================================================== */
-/* KEAMANAN TAMPILAN TEKS */
-/* ===================================================== */
-
-function escapeHTML(text){
-
-  return String(text)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-
-}
-
-
-/* ===================================================== */
-/* SEMBUNYIKAN SEMUA HALAMAN */
-/* ===================================================== */
-
-function sembunyikanSemua(){
-
-  document.getElementById("quranPage")
-    .classList.add("hidden");
-
-  document.getElementById("detailPage")
-    .classList.add("hidden");
-
-  document.getElementById("prayerPage")
-    .classList.add("hidden");
-
-  document.getElementById("rewardPage")
-    .classList.add("hidden");
-
-  document.getElementById("accountPage")
-    .classList.add("hidden");
-
-  document.getElementById("ownerPage")
-    .classList.add("hidden");
-
-}
-
-
-/* ===================================================== */
-/* SURAH */
-/* ===================================================== */
+/* ==================================================
+   QURAN
+================================================== */
 
 async function muatSurah(){
 
@@ -1784,25 +1614,20 @@ async function muatSurah(){
         "https://api.alquran.cloud/v1/surah"
       );
 
-
     const data =
       await response.json();
 
+    semuaSurah=data.data;
 
-    semuaSurah =
-      data.data;
+    tampilkanSurah(semuaSurah);
 
-
-    tampilkanSurah(
-      semuaSurah
-    );
-
-
-  }catch(error){
+  }catch(e){
 
     document.getElementById("surahList")
-      .innerHTML =
-      '<div class="error">Gagal memuat data surah. Periksa koneksi internet.</div>';
+      .innerHTML=
+      `<div class="card">
+        Gagal memuat daftar surah.
+      </div>`;
 
   }
 
@@ -1811,46 +1636,38 @@ async function muatSurah(){
 
 function tampilkanSurah(data){
 
-  const list =
-    document.getElementById(
-      "surahList"
-    );
+  document.getElementById("surahList")
+    .innerHTML = data.map(surah=>`
 
+      <div
+        class="surah-card"
+        onclick="bukaSurah(${surah.number})"
+      >
 
-  list.innerHTML =
-    data.map(
-      surah=>`
+        <div class="number">
+          ${surah.number}
+        </div>
 
-        <div
-          class="surah-card"
-          onclick="bukaSurah(${surah.number})"
-        >
+        <div class="surah-info">
 
-          <div class="number">
-            ${surah.number}
+          <div class="surah-name">
+            ${surah.englishName}
           </div>
 
-          <div class="surah-info">
-
-            <div class="surah-name">
-              ${escapeHTML(surah.englishName)}
-            </div>
-
-            <div class="surah-desc">
-              ${escapeHTML(surah.englishNameTranslation)}
-              • ${surah.numberOfAyahs} Ayat
-            </div>
-
-          </div>
-
-          <div class="arabic">
-            ${escapeHTML(surah.name)}
+          <div class="surah-desc">
+            ${surah.englishNameTranslation}
+            • ${surah.numberOfAyahs} Ayat
           </div>
 
         </div>
 
-      `
-    ).join("");
+        <div class="arabic">
+          ${surah.name}
+        </div>
+
+      </div>
+
+    `).join("");
 
 }
 
@@ -1858,75 +1675,83 @@ function tampilkanSurah(data){
 function cariSurah(){
 
   const keyword =
-    document.getElementById(
-      "search"
-    )
-    .value
-    .toLowerCase()
+    document.getElementById("search")
+    .value.toLowerCase()
     .trim();
 
-
   const hasil =
-    semuaSurah.filter(
-      surah =>
+    semuaSurah.filter(surah=>
 
-        surah.englishName
-          .toLowerCase()
-          .includes(keyword) ||
+      surah.englishName
+        .toLowerCase()
+        .includes(keyword)
 
-        surah.englishNameTranslation
-          .toLowerCase()
-          .includes(keyword) ||
+      ||
 
-        surah.number
-          .toString()
-          .includes(keyword)
+      surah.englishNameTranslation
+        .toLowerCase()
+        .includes(keyword)
+
+      ||
+
+      surah.number
+        .toString()
+        .includes(keyword)
+
     );
 
-
-  tampilkanSurah(
-    hasil
-  );
+  tampilkanSurah(hasil);
 
 }
 
 
-/* ===================================================== */
-/* DETAIL SURAH */
-/* ===================================================== */
+/* ==================================================
+   DETAIL SURAH
+================================================== */
 
 async function bukaSurah(nomor){
 
   sembunyikanSemua();
 
+  document.getElementById("detailPage")
+    .classList.remove("hidden");
 
-  document.getElementById(
-    "detailPage"
-  ).classList.remove("hidden");
+  aktifkanMenu("quranBtn");
 
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+  window.scrollTo(0,0);
 
 
-  const content =
-    document.getElementById(
-      "detailContent"
+  let opened =
+    JSON.parse(
+      localStorage.getItem("surahDibaca") || "[]"
     );
 
 
-  content.innerHTML =
-    '<div class="loading">📖 Memuat ayat dan arti...</div>';
+  if(!opened.includes(nomor)){
+
+    opened.push(nomor);
+
+    localStorage.setItem(
+      "surahDibaca",
+      JSON.stringify(opened)
+    );
+
+  }
+
+
+  const content =
+    document.getElementById("detailContent");
+
+
+  content.innerHTML=
+    `<div class="card">
+      📖 Memuat surah...
+    </div>`;
 
 
   try{
 
-    const [
-      arabResponse,
-      indoResponse
-    ] =
+    const [arabResponse,indoResponse] =
       await Promise.all([
 
         fetch(
@@ -1947,20 +1772,16 @@ async function bukaSurah(nomor){
       await indoResponse.json();
 
 
-    const arab =
-      arabData.data;
-
-    const arti =
-      indoData.data;
+    const arab=arabData.data;
+    const arti=indoData.data;
 
 
-    document.getElementById(
-      "detailTitle"
-    ).textContent =
+    document.getElementById("detailTitle")
+      .textContent=
       `${arab.englishName} (${arab.name})`;
 
 
-    let html = `
+    let html=`
 
       <div class="surah-hero">
 
@@ -1968,26 +1789,27 @@ async function bukaSurah(nomor){
           ${arab.name}
         </div>
 
-        <h2>
-          ${arab.englishName}
-        </h2>
+        <h2>${arab.englishName}</h2>
 
-        <p>
-          ${arab.englishNameTranslation}
-        </p>
+        <p>${arab.englishNameTranslation}</p>
 
-        <p>
-          ${arab.numberOfAyahs} Ayat
-        </p>
+        <p>${arab.numberOfAyahs} Ayat</p>
+
+        <button
+          class="secondary-btn"
+          onclick="bacaSemuaAyat()"
+        >
+          🔊 AI/Baca dengan Suara
+        </button>
 
       </div>
 
     `;
 
 
-    if(nomor !== 9){
+    if(nomor!==9){
 
-      html += `
+      html+=`
 
         <div class="bismillah">
           بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
@@ -1998,106 +1820,188 @@ async function bukaSurah(nomor){
     }
 
 
-    arab.ayahs.forEach(
-      (ayat,index)=>{
+    arab.ayahs.forEach((ayat,index)=>{
 
-        const terjemahan =
-          arti.ayahs[index]
-          ? arti.ayahs[index].text
-          : "-";
+      const terjemahan =
+        arti.ayahs[index]
+        ? arti.ayahs[index].text
+        : "-";
 
 
-        html += `
+      html+=`
 
-          <div class="ayat">
+        <div class="ayat">
 
-            <div class="ayat-number">
-              Ayat ${index+1}
-            </div>
+          <div class="ayat-number">
+            Ayat ${index+1}
+          </div>
 
-            <div class="ayat-arab">
-              ${ayat.text}
-            </div>
+          <div class="ayat-arab">
+            ${ayat.text}
+          </div>
 
-            <div class="ayat-arti">
-              <b>Arti:</b><br>
-              ${terjemahan}
-            </div>
+          <div class="ayat-arti">
+            <b>Arti:</b><br>
+            ${terjemahan}
+          </div>
+
+          <div class="ayat-actions">
+
+            <button
+              class="small-btn"
+              onclick='bacakan(${JSON.stringify(ayat.text)})'
+            >
+              🔊 Baca
+            </button>
+
+            <button
+              class="small-btn"
+              onclick="simpanBookmark(${nomor},${index+1})"
+            >
+              ❤️ Simpan
+            </button>
 
           </div>
 
-        `;
+        </div>
 
-      }
-    );
+      `;
 
-
-    content.innerHTML =
-      html;
+    });
 
 
-  }catch(error){
+    content.innerHTML=html;
 
-    content.innerHTML =
-      '<div class="error">Gagal memuat isi surah.</div>';
+
+  }catch(e){
+
+    content.innerHTML=
+      `<div class="card">
+        Gagal memuat isi surah.
+      </div>`;
 
   }
 
 }
 
-
-/* ===================================================== */
-/* KEMBALI */
-/* ===================================================== */
 
 function kembali(){
 
-  sembunyikanSemua();
-
-
-  document.getElementById(
-    "quranPage"
-  ).classList.remove("hidden");
-
-
-  aktifkanMenu(
-    "quranBtn"
-  );
-
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+  bukaQuran();
 
 }
 
 
-/* ===================================================== */
-/* MENU */
-/* ===================================================== */
+/* ==================================================
+   SUARA
+================================================== */
 
-function aktifkanMenu(id){
+function bacakan(text){
 
-  document.querySelectorAll(
-    ".nav-btn"
-  ).forEach(
-    btn=>{
-      btn.classList.remove(
-        "active"
+  if(!("speechSynthesis" in window)){
+
+    alert("Browser ini tidak mendukung fitur suara.");
+
+    return;
+
+  }
+
+
+  speechSynthesis.cancel();
+
+  const suara =
+    new SpeechSynthesisUtterance(text);
+
+  suara.lang="ar-SA";
+
+  suara.rate=.75;
+
+  speechSynthesis.speak(suara);
+
+}
+
+
+function bacaSemuaAyat(){
+
+  const ayat =
+    document.querySelectorAll(".ayat-arab");
+
+  if(!ayat.length)return;
+
+  speechSynthesis.cancel();
+
+  let index=0;
+
+
+  function berikutnya(){
+
+    if(index>=ayat.length)return;
+
+    const suara =
+      new SpeechSynthesisUtterance(
+        ayat[index].textContent.trim()
       );
-    }
-  );
+
+    suara.lang="ar-SA";
+
+    suara.rate=.75;
+
+    suara.onend=()=>{
+
+      index++;
+
+      setTimeout(berikutnya,400);
+
+    };
+
+    speechSynthesis.speak(suara);
+
+  }
 
 
-  const tombol =
-    document.getElementById(id);
+  berikutnya();
+
+}
 
 
-  if(tombol){
+/* ==================================================
+   BOOKMARK
+================================================== */
 
-    tombol.classList.add(
-      "active"
+function simpanBookmark(surah,ayat){
+
+  let bookmarks =
+    JSON.parse(
+      localStorage.getItem("bookmarkAlquran") || "[]"
+    );
+
+
+  const exists =
+    bookmarks.some(
+      b=>b.surah===surah && b.ayat===ayat
+    );
+
+
+  if(!exists){
+
+    bookmarks.push({
+      surah:surah,
+      ayat:ayat
+    });
+
+    localStorage.setItem(
+      "bookmarkAlquran",
+      JSON.stringify(bookmarks)
+    );
+
+    tampilkanNotifikasi(
+      "❤️ Ayat berhasil disimpan."
+    );
+
+  }else{
+
+    tampilkanNotifikasi(
+      "Ayat sudah ada di bookmark."
     );
 
   }
@@ -2105,121 +2009,632 @@ function aktifkanMenu(id){
 }
 
 
-function bukaQuran(){
+/* ==================================================
+   SETORAN
+================================================== */
 
-  sembunyikanSemua();
+function isiDataSetoran(){
 
-
-  document.getElementById(
-    "quranPage"
-  ).classList.remove("hidden");
-
-
-  aktifkanMenu(
-    "quranBtn"
-  );
+  const login =
+    JSON.parse(
+      localStorage.getItem("loginAlquran") || "null"
+    );
 
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-}
+  if(!login)return;
 
 
-function bukaSholat(){
+  const users=ambilPengguna();
 
-  sembunyikanSemua();
-
-
-  document.getElementById(
-    "prayerPage"
-  ).classList.remove("hidden");
+  const user =
+    users.find(
+      u=>u.username===login.username
+    );
 
 
-  aktifkanMenu(
-    "prayerBtn"
-  );
+  if(user){
 
+    document.getElementById("setorNama")
+      .value=user.nama||"";
 
-  muatWaktuSholat();
+    document.getElementById("setorKelas")
+      .value=user.kelas||"";
 
+    document.getElementById("setorUmur")
+      .value=user.umur||"";
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-}
-
-
-function bukaReward(){
-
-  sembunyikanSemua();
-
-
-  document.getElementById(
-    "rewardPage"
-  ).classList.remove("hidden");
-
-
-  aktifkanMenu(
-    "rewardBtn"
-  );
-
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-}
-
-
-/* ===================================================== */
-/* TANGGAL */
-/* ===================================================== */
-
-document.getElementById(
-  "todayDate"
-).textContent =
-
-new Date().toLocaleDateString(
-  "id-ID",
-  {
-    weekday:"long",
-    day:"numeric",
-    month:"long",
-    year:"numeric"
   }
-);
+
+}
 
 
-/* ===================================================== */
-/* WAKTU SALAT */
-/* ===================================================== */
+function previewVideo(){
+
+  const file =
+    document.getElementById("videoFile")
+    .files[0];
+
+  const preview =
+    document.getElementById("videoPreview");
+
+
+  if(!file){
+
+    preview.classList.add("hidden");
+
+    return;
+
+  }
+
+
+  preview.src =
+    URL.createObjectURL(file);
+
+  preview.classList.remove("hidden");
+
+}
+
+
+function kirimSetoran(){
+
+  const login =
+    JSON.parse(
+      localStorage.getItem("loginAlquran") || "null"
+    );
+
+
+  if(!login){
+
+    alert("Silakan login terlebih dahulu.");
+
+    return;
+
+  }
+
+
+  const nama =
+    document.getElementById("setorNama")
+    .value.trim();
+
+  const kelas =
+    document.getElementById("setorKelas")
+    .value.trim();
+
+  const umur =
+    document.getElementById("setorUmur")
+    .value.trim();
+
+  const jumlah =
+    document.getElementById("setorJumlah")
+    .value.trim();
+
+  const surah =
+    document.getElementById("setorSurah")
+    .value.trim();
+
+  const sumber =
+    document.getElementById("videoSource")
+    .value.trim();
+
+  const file =
+    document.getElementById("videoFile")
+    .files[0];
+
+
+  if(
+    !nama ||
+    !kelas ||
+    !umur ||
+    !jumlah ||
+    !surah
+  ){
+
+    alert("Lengkapi semua data setoran.");
+
+    return;
+
+  }
+
+
+  if(!file && !sumber){
+
+    alert(
+      "Masukkan video atau link sumber video."
+    );
+
+    return;
+
+  }
+
+
+  const setoran=ambilSetoran();
+
+
+  setoran.push({
+
+    id:Date.now(),
+
+    username:login.username,
+
+    nama:nama,
+
+    kelas:kelas,
+
+    umur:umur,
+
+    jumlah:jumlah,
+
+    surah:surah,
+
+    sumber:sumber,
+
+    fileName:file ? file.name : "",
+
+    status:"Menunggu",
+
+    tanggal:new Date().toLocaleString("id-ID")
+
+  });
+
+
+  simpanSetoran(setoran);
+
+
+  /* simpan data profil sederhana */
+
+  const users=ambilPengguna();
+
+  const index =
+    users.findIndex(
+      u=>u.username===login.username
+    );
+
+
+  if(index>=0){
+
+    users[index].nama=nama;
+    users[index].kelas=kelas;
+    users[index].umur=umur;
+
+    simpanPengguna(users);
+
+  }
+
+
+  tampilkanNotifikasi(
+    "📤 Setoran berhasil dikirim dan menunggu verifikasi Owner."
+  );
+
+
+  document.getElementById("setorJumlah").value="";
+  document.getElementById("setorSurah").value="";
+  document.getElementById("videoSource").value="";
+  document.getElementById("videoFile").value="";
+
+  document.getElementById("videoPreview")
+    .classList.add("hidden");
+
+
+  tampilkanSetoranSaya();
+
+}
+
+
+function tampilkanSetoranSaya(){
+
+  const login =
+    JSON.parse(
+      localStorage.getItem("loginAlquran") || "null"
+    );
+
+
+  if(!login)return;
+
+
+  const data =
+    ambilSetoran().filter(
+      s=>s.username===login.username
+    );
+
+
+  const box =
+    document.getElementById("mySubmissions");
+
+
+  if(!data.length){
+
+    box.innerHTML=
+      `<div class="info">
+        Belum ada setoran.
+      </div>`;
+
+    return;
+
+  }
+
+
+  box.innerHTML =
+    data.slice().reverse().map(s=>`
+
+      <div class="submission-item">
+
+        <b>📖 ${s.surah}</b><br>
+
+        Nama: ${s.nama}<br>
+        Kelas: ${s.kelas}<br>
+        Jumlah surah: ${s.jumlah}<br>
+
+        <small>
+          Dikirim: ${s.tanggal}
+        </small>
+
+        <br><br>
+
+        <span class="status ${
+          s.status==="Diterima"
+          ?"accepted"
+          :s.status==="Ditolak"
+          ?"rejected"
+          :"waiting"
+        }">
+          ${s.status}
+        </span>
+
+        ${
+          s.status==="Diterima"
+          ?`
+            <div class="info" style="margin-top:12px">
+
+              <b>🎉 Setoran diterima.</b><br><br>
+
+              Untuk keperluan administrasi,
+              silakan isi:<br><br>
+
+              <b>No. DANA:</b><br>
+              ___________________<br><br>
+
+              <b>Jika tidak punya DANA,
+              No. Bank:</b><br>
+              ___________________
+
+            </div>
+          `
+          :""
+        }
+
+      </div>
+
+    `).join("");
+
+}
+
+
+/* ==================================================
+   OWNER
+================================================== */
+
+function tampilkanOwner(){
+
+  const users=ambilPengguna();
+
+  const submissions=ambilSetoran();
+
+
+  document.getElementById("statUsers")
+    .textContent=users.length;
+
+  document.getElementById("statSubmissions")
+    .textContent=submissions.length;
+
+  document.getElementById("statWaiting")
+    .textContent=
+    submissions.filter(
+      s=>s.status==="Menunggu"
+    ).length;
+
+  document.getElementById("statAccepted")
+    .textContent=
+    submissions.filter(
+      s=>s.status==="Diterima"
+    ).length;
+
+
+  const userList =
+    document.getElementById("userList");
+
+
+  if(!users.length){
+
+    userList.innerHTML=
+      `<div class="info">
+        Belum ada pengguna.
+      </div>`;
+
+  }else{
+
+    userList.innerHTML =
+      users.map((u,i)=>`
+
+        <div class="user-item">
+
+          <b>
+            👤 ${i+1}. ${u.username}
+          </b>
+
+          <br>
+
+          Terdaftar:
+          ${u.tanggal}
+
+        </div>
+
+      `).join("");
+
+  }
+
+
+  const box =
+    document.getElementById("ownerSubmissions");
+
+
+  if(!submissions.length){
+
+    box.innerHTML=
+      `<div class="info">
+        Belum ada setoran.
+      </div>`;
+
+    return;
+
+  }
+
+
+  box.innerHTML =
+    submissions.slice().reverse()
+    .map(s=>`
+
+      <div class="submission-item">
+
+        <b>🎤 ${s.nama}</b><br>
+
+        Username: ${s.username}<br>
+        Kelas: ${s.kelas}<br>
+        Umur: ${s.umur}<br>
+        Jumlah: ${s.jumlah} surah<br>
+        Surah: ${s.surah}<br>
+
+        ${
+          s.sumber
+          ?`
+            <a
+              href="${escapeAttr(s.sumber)}"
+              target="_blank"
+              rel="noopener"
+            >
+              🔗 Buka sumber video
+            </a>
+          `
+          :""
+        }
+
+        ${
+          s.fileName
+          ?`
+            <br>
+            🎥 File: ${s.fileName}
+            <br>
+            <small>
+              Catatan: file video lokal tidak tersimpan
+              ke perangkat Owner dalam versi GitHub Pages ini.
+            </small>
+          `
+          :""
+        }
+
+        <br>
+
+        Dikirim:
+        ${s.tanggal}
+
+        <br><br>
+
+        <span class="status ${
+          s.status==="Diterima"
+          ?"accepted"
+          :s.status==="Ditolak"
+          ?"rejected"
+          :"waiting"
+        }">
+          ${s.status}
+        </span>
+
+        ${
+          s.status==="Menunggu"
+          ?`
+            <div class="owner-actions">
+
+              <button
+                class="accept"
+                onclick="ubahStatus(${s.id},'Diterima')"
+              >
+                ✅ Terima
+              </button>
+
+              <button
+                class="reject"
+                onclick="ubahStatus(${s.id},'Ditolak')"
+              >
+                ❌ Tolak
+              </button>
+
+            </div>
+          `
+          :""
+        }
+
+      </div>
+
+    `).join("");
+
+}
+
+
+function ubahStatus(id,status){
+
+  const login =
+    JSON.parse(
+      localStorage.getItem("loginAlquran") || "null"
+    );
+
+
+  if(!login || !login.owner){
+
+    alert("Hanya Owner.");
+
+    return;
+
+  }
+
+
+  const data=ambilSetoran();
+
+
+  const index =
+    data.findIndex(
+      s=>s.id===id
+    );
+
+
+  if(index===-1)return;
+
+
+  data[index].status=status;
+
+  simpanSetoran(data);
+
+
+  tampilkanOwner();
+
+
+  tampilkanNotifikasi(
+    status==="Diterima"
+    ?"✅ Setoran diterima."
+    :"❌ Setoran ditolak."
+  );
+
+}
+
+
+/* ==================================================
+   DARK MODE
+================================================== */
+
+function toggleDarkMode(){
+
+  document.body.classList.toggle("dark");
+
+  localStorage.setItem(
+    "darkMode",
+    document.body.classList.contains("dark")
+      ? "1"
+      : "0"
+  );
+
+}
+
+
+/* ==================================================
+   NOTIFIKASI
+================================================== */
+
+function tampilkanNotifikasi(text){
+
+  const box =
+    document.getElementById("notification");
+
+  box.textContent=text;
+
+  box.classList.remove("hidden");
+
+
+  setTimeout(()=>{
+
+    box.classList.add("hidden");
+
+  },4000);
+
+}
+
+
+async function aktifkanNotifikasi(){
+
+  if(!("Notification" in window)){
+
+    alert(
+      "Browser ini tidak mendukung notifikasi."
+    );
+
+    return;
+
+  }
+
+
+  const permission =
+    await Notification.requestPermission();
+
+
+  if(permission==="granted"){
+
+    new Notification(
+      "Al-Qur'an Digital",
+      {
+        body:
+        "Notifikasi waktu salat berhasil diaktifkan."
+      }
+    );
+
+    localStorage.setItem(
+      "notifSalat",
+      "1"
+    );
+
+  }
+
+}
+
+
+/* ==================================================
+   WAKTU SALAT
+================================================== */
+
+document.getElementById("todayDate")
+  .textContent =
+  new Date().toLocaleDateString(
+    "id-ID",
+    {
+      weekday:"long",
+      day:"numeric",
+      month:"long",
+      year:"numeric"
+    }
+  );
+
 
 async function muatWaktuSholat(){
 
   try{
 
-    const sekarang =
-      new Date();
+    const now=new Date();
 
 
     const tanggal =
-      String(
-        sekarang.getDate()
-      ).padStart(2,"0")
+      String(now.getDate()).padStart(2,"0")
       + "-"
       +
-      String(
-        sekarang.getMonth()+1
-      ).padStart(2,"0")
+      String(now.getMonth()+1).padStart(2,"0")
       + "-"
       +
-      sekarang.getFullYear();
+      now.getFullYear();
 
 
     const response =
@@ -2228,63 +2643,32 @@ async function muatWaktuSholat(){
       );
 
 
-    const data =
-      await response.json();
+    const data=await response.json();
+
+    const waktu=data.data.timings;
 
 
-    const waktu =
-      data.data.timings;
+    ["Fajr","Dhuhr","Asr","Maghrib","Isha"]
+      .forEach(key=>{
+
+        const el =
+          document.getElementById(key);
+
+        if(el){
+
+          el.textContent =
+            waktu[key]
+            .replace(/\s*\(.+\)/,"");
+
+        }
+
+      });
 
 
-    document.getElementById(
-      "Fajr"
-    ).textContent =
-      waktu.Fajr.replace(
-        /\s*\(.+\)/,
-        ""
-      );
-
-
-    document.getElementById(
-      "Dhuhr"
-    ).textContent =
-      waktu.Dhuhr.replace(
-        /\s*\(.+\)/,
-        ""
-      );
-
-
-    document.getElementById(
-      "Asr"
-    ).textContent =
-      waktu.Asr.replace(
-        /\s*\(.+\)/,
-        ""
-      );
-
-
-    document.getElementById(
-      "Maghrib"
-    ).textContent =
-      waktu.Maghrib.replace(
-        /\s*\(.+\)/,
-        ""
-      );
-
-
-    document.getElementById(
-      "Isha"
-    ).textContent =
-      waktu.Isha.replace(
-        /\s*\(.+\)/,
-        ""
-      );
-
-
-  }catch(error){
+  }catch(e){
 
     console.log(
-      "Gagal memuat waktu salat"
+      "Gagal memuat waktu salat."
     );
 
   }
@@ -2292,50 +2676,60 @@ async function muatWaktuSholat(){
 }
 
 
-/* ===================================================== */
-/* CEK LOGIN */
-/* ===================================================== */
+/* ==================================================
+   ESCAPE
+================================================== */
+
+function escapeAttr(value){
+
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/"/g,"&quot;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;");
+
+}
+
+
+/* ==================================================
+   CEK LOGIN
+================================================== */
 
 function cekLogin(){
 
   const login =
     JSON.parse(
-      localStorage.getItem(
-        "loginAlquran"
-      ) || "null"
+      localStorage.getItem("loginAlquran") || "null"
     );
 
 
   if(login){
 
-    document.getElementById(
-      "authPage"
-    ).classList.add("hidden");
-
-
-    document.getElementById(
-      "website"
-    ).classList.remove("hidden");
-
-
-    document.getElementById(
-      "ownerBtn"
-    ).classList.toggle(
-      "hidden",
-      !login.owner
+    masukWebsite(
+      !!login.owner
     );
-
-
-    bukaQuran();
 
   }
 
 }
 
 
-/* ===================================================== */
-/* JALANKAN */
-/* ===================================================== */
+/* ==================================================
+   TEMA
+================================================== */
+
+if(
+  localStorage.getItem("darkMode")==="1"
+){
+
+  document.body.classList.add("dark");
+
+}
+
+
+/* ==================================================
+   MULAI
+================================================== */
 
 muatSurah();
 
@@ -2346,4 +2740,4 @@ cekLogin();
 </script>
 
 </body>
-</html>
+  </html>
